@@ -1,0 +1,39 @@
+{
+  "name": "gulp-tasks-registrator",
+  "version": "0.1.0",
+  "description": "Registers gulp tasks from folders.",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "eslint src --config ./.eslintrc",
+    "build:src": "babel src --out-dir lib",
+    "build:test": "babel test --out-dir lib/test",
+    "pretest": "npm run lint && npm run clean && npm run build:src && npm run build:test",
+    "test": "mocha lib/test/unit/*.js",
+    "test:debug": "mocha lib/test/unit/*.js --debug --debug-brk",
+    "posttest": "rimraf lib/test",
+    "prepublish": "npm run lint && npm run clean && npm run build:src"
+  },
+  "keywords": [
+    "gulp",
+    "task",
+    "manager",
+    "injector",
+    "loader"
+  ],
+  "author": "Tim Voronov <ziflex@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-eslint": "^4.1.4",
+    "chai": "^3.4.0",
+    "chai-spies": "^0.7.1",
+    "cp": "^0.2.0",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^0.1.0",
+    "eslint-plugin-mocha": "^1.0.0",
+    "glob": "^5.0.15",
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.3"
+  }
+}
