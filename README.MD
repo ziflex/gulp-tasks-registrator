@@ -3,7 +3,6 @@
 Gulp tasks registrator. 
 
 [![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)
-[![Bower version](https://badge.fury.io/bo/gulp-tasks-registrator.svg)](http://badge.fury.io/bo/gulp-tasks-registrator)
 [![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  
 
 Registrator runs through a target directory and tries to register found ```.js``` files as gulp tasks.  
