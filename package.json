@@ -1,6 +1,6 @@
 {
   "name": "gulp-tasks-registrator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Registers gulp tasks from folders.",
   "main": "lib/index.js",
   "scripts": {
@@ -23,6 +23,9 @@
   ],
   "author": "Tim Voronov <ziflex@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "glob": "^5.0.15"
+  },
   "devDependencies": {
     "babel": "^5.8.29",
     "babel-eslint": "^4.1.4",
@@ -32,7 +35,6 @@
     "eslint": "^1.9.0",
     "eslint-config-airbnb": "^0.1.0",
     "eslint-plugin-mocha": "^1.0.0",
-    "glob": "^5.0.15",
     "mocha": "^2.3.3",
     "rimraf": "^2.4.3"
   }

@@ -94,7 +94,7 @@ Optional.
 #### options.verbose
 Type: `boolean`.  
 Defines whether to push to console logs.  
-Optional. 
+Optional.  
 Default false.  
 
 #### options.panic
