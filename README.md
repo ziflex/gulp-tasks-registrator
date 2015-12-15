@@ -1,6 +1,6 @@
 # gulp-tasks-registrator
 
-Gulp tasks registrator. 
+Gulp tasks registrator.
 
 [![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)
 [![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  
@@ -21,7 +21,7 @@ Registrator runs through a target directory and tries to register found ```.js``
 For example, we have this folder structure with our tasks:
 
 ````sh
-    
+
     tasks
         env.js
         build
@@ -33,16 +33,16 @@ For example, we have this folder structure with our tasks:
 ````
 
 Registrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  
-  
+
 * env  
 * build:styles  
 * build:scripts:app  
-* build:scripts:vendors 
+* build:scripts:vendors
 
 #### ./gulpfile.js
 
 ```javascript
-    
+
     var path = require('path');
     var $ = require('gulp-load-plugins')(
         pattern: [
@@ -51,7 +51,7 @@ Registrator will create tasks using convention - {folder1}:{folderN}:{filename},
             'gulp.*'
         ]
     );
-    
+
     require('gulp-tasks-registrator')({
         gulp: $.gulp,
         dir: path.join(__dirname, '/tasks'),
@@ -71,8 +71,8 @@ Factory will receive any arguments that were passed into registrator.
             return $.gulp.src(...)
         };
     };
-    
-```` 
+
+````
 
 ### API
 
@@ -101,4 +101,27 @@ Default false.
 Type: `boolean`.  
 Defines whether to throw error if task registration failed.  
 Optional.  
-Default true. 
+Default true.
+
+### License
+
+The MIT License (MIT)    
+Copyright (C) 2015 Tim Voronov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
