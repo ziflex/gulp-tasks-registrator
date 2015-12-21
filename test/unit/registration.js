@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import chai from 'chai';
 import spies from 'chai-spies';
 import path from 'path';
@@ -6,6 +7,18 @@ import GulpMock from '../mock/gulp';
 
 chai.use(spies);
 const expect = chai.expect;
+
+function indexBy(arr, propName) {
+    const result = {};
+
+    arr.forEach((item) => {
+        const propValue = item[propName];
+
+        result[propValue.toString()] = item;
+    });
+
+    return result;
+}
 
 describe('registration', () => {
     let gulp = null;
@@ -24,17 +37,20 @@ describe('registration', () => {
                     verbose: false
                 });
 
-                const expectedNames = {
-                    'task-1': true,
-                    'task-2': true
-                };
+                const expectedTasks = [
+                    {
+                        name: 'task-1'
+                    },
+                    {
+                        name: 'task-2'
+                    }
+                ];
 
-                const tasks = gulp.getTasks();
+                const tasks = indexBy(gulp.getTasks(), 'name');
 
-                expect(tasks).to.not.empty;
-
-                tasks.forEach((task) => {
-                    expect(expectedNames[task.name]).to.exist;
+                expectedTasks.forEach((expectedTask) => {
+                    const task = tasks[expectedTask.name];
+                    expect(task).to.exist;
                 });
             });
         });
@@ -48,21 +64,32 @@ describe('registration', () => {
                     verbose: false
                 });
 
-                const expectedNames = {
-                    '1:task-1': true,
-                    '1:task-2': true,
-                    '1:2:task-1': true,
-                    '1:2:task-2': true,
-                    '1:2:3:task-1': true,
-                    '1:2:3:task-2': true
-                };
+                const expectedTasks = [
+                    {
+                        name: '1:task-1'
+                    },
+                    {
+                        name: '1:task-2'
+                    },
+                    {
+                        name: '1:2:task-1'
+                    },
+                    {
+                        name: '1:2:task-2'
+                    },
+                    {
+                        name: '1:2:3:task-1'
+                    },
+                    {
+                        name: '1:2:3:task-2'
+                    }
+                ];
 
-                const tasks = gulp.getTasks();
+                const tasks = indexBy(gulp.getTasks(), 'name');
 
-                expect(tasks).to.not.empty;
-
-                tasks.forEach((task) => {
-                    expect(expectedNames[task.name]).to.exist;
+                expectedTasks.forEach((expectedTask) => {
+                    const task = tasks[expectedTask.name];
+                    expect(task).to.exist;
                 });
             });
         });
@@ -93,4 +120,78 @@ describe('registration', () => {
             });
         });
     });
+
+    describe('groups', () => {
+        it('should register task with dependencies of nested tasks', () => {
+            registrator({
+                gulp,
+                dir: path.join(__dirname, '../fixtures/nesting'),
+                panic: true,
+                verbose: false,
+                group: true
+            });
+
+            const expectedTasks = [
+                {
+                    name: '1',
+                    dependencies: [
+                        '1:2',
+                        '1:task-1',
+                        '1:task-2'
+                    ]
+                },
+                {
+                    name: '1:task-1'
+                },
+                {
+                    name: '1:task-2'
+                },
+                {
+                    name: '1:2',
+                    dependencies: [
+                        '1:2:3',
+                        '1:2:task-1',
+                        '1:2:task-2'
+                    ]
+                },
+                {
+                    name: '1:2:task-1'
+                },
+                {
+                    name: '1:2:task-2'
+                },
+                {
+                    name: '1:2:3',
+                    dependencies: [
+                        '1:2:3:task-1',
+                        '1:2:3:task-2'
+                    ]
+                },
+                {
+                    name: '1:2:3:task-1'
+                },
+                {
+                    name: '1:2:3:task-2'
+                }
+            ];
+
+            const tasks = indexBy(gulp.getTasks(), 'name');
+
+            expectedTasks.forEach((expectedTask) => {
+                const task = tasks[expectedTask.name];
+                expect(task).to.exist;
+
+                if (expectedTask.dependencies) {
+                    expect(task.dependencies).to.exist;
+                    expect(task.dependencies).to.not.empty;
+                    expect(task.dependencies.length).to.be.equal(expectedTask.dependencies.length);
+
+                    expectedTask.dependencies.forEach((dep) => {
+                        expect(task.dependencies).to.include(dep);
+                    });
+                }
+            });
+        });
+    });
 });
+/* eslint-enable no-unused-expressions */

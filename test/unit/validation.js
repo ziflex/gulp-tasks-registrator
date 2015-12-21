@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import chai from 'chai';
 import registrator from '../../index';
 
@@ -46,3 +47,4 @@ describe('validation', () => {
         });
     });
 });
+/* eslint-enable no-unused-expressions */

@@ -1,7 +1,7 @@
 {
   "name": "gulp-tasks-registrator",
-  "version": "0.1.1",
-  "description": "Registers gulp tasks from folders.",
+  "version": "0.2.0",
+  "description": "Registers gulp tasks from folders",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
@@ -10,7 +10,6 @@
     "build:test": "babel test --out-dir lib/test",
     "pretest": "npm run lint && npm run clean && npm run build:src && npm run build:test",
     "test": "mocha lib/test/unit/*.js",
-    "test:debug": "mocha lib/test/unit/*.js --debug --debug-brk",
     "posttest": "rimraf lib/test",
     "prepublish": "npm run lint && npm run clean && npm run build:src"
   },
@@ -22,8 +21,13 @@
     "loader"
   ],
   "author": "Tim Voronov <ziflex@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ziflex/gulp-tasks-registrator.git"
+  },
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.1.1",
     "glob": "^5.0.15"
   },
   "devDependencies": {

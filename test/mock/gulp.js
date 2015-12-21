@@ -5,10 +5,10 @@ export default class GulpMock {
 
     task(...args) {
         const name = args[0];
-        const deps = args.length === 3 ? args[1] : null;
+        const dependencies = args.length === 3 ? args[1] : null;
         const func = args.length === 3 ? args[2] : args[1];
 
-        this._tasks.push({ name, deps, func });
+        this._tasks.push({ name, dependencies, func });
     }
 
     getTasks() {

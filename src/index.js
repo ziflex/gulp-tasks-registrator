@@ -1,86 +1,35 @@
 import glob from 'glob';
 import path from 'path';
+import chalk from 'chalk';
+import { getOptions, getFactory, getPath } from './utils';
+import Logger from './logger';
+import Group from './group';
 
-const INVALID_MODULE_ERROR = 'Invalid task factory module';
-const OPTIONS_NOT_FOUND_ERROR = 'Options are missed';
-const GULP_NOT_DEFINED_ERROR = 'Gulp is missed!';
-const DIR_NOT_DEFINED_ERROR = 'Target directory is missed!';
+const SUCESS_MESSAGE = 'Registered task:';
+const FAILURE_MESSAGE = 'Failed to register task:';
 
 /**
  * Iterates over target directory and registers gulp tasks by invoking task factories.
  * Task name is based on its path.
- * @param options
- * @param options.gulp {Object} - Gulp instance.
- * @param options.dir {string} - Full path to task factories directory.
- * @param options.args {Array<any>} - Arguments to pass to task factories. Optional.
- * @param options.verbose {boolean} - Defines whether to push to console logs. Optional. Default false.
- * @param options.panic {boolean} - Defines whether to throw error if task registration failed. Optional. Default true.
+ * @param params
+ * @param params.gulp {Object} - Gulp instance.
+ * @param params.dir {String} - Full path to task factories directory.
+ * @param params.args {Array<any>} - Arguments to pass to task factories. optionsional.
+ * @param params.verbose {Boolean} - Defines whether to push to console logs. optionsional. Default false.
+ * @param params.panic {Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true.
+ * @param params.group {Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies.
  */
-export default function(options) {
-    if (!options) {
-        throw new Error(OPTIONS_NOT_FOUND_ERROR);
-    }
-
-    if (!options.gulp) {
-        throw new Error(GULP_NOT_DEFINED_ERROR);
-    }
-
-    if (!options.dir) {
-        throw new Error(DIR_NOT_DEFINED_ERROR);
-    }
-
-    if (!options.args) {
-        options.args = [];
-    }
-
-    if (typeof options.panic !== 'boolean') {
-        options.panic = true;
-    }
-
-    function info(...args) {
-        if (options.verbose) {
-            console.info(...args);
-        }
-    }
-
-    function error(...args) {
-        if (options.verbose) {
-            console.error(...args);
-        }
-    }
-
-    function getFactory(module) {
-        if (!module) {
-            throw new Error(INVALID_MODULE_ERROR);
-        }
-
-        if (typeof module === 'function') {
-            return module;
-        }
-
-        if (typeof module.default === 'function') {
-            return module.default;
-        }
-
-        throw new Error(INVALID_MODULE_ERROR);
-    }
-
-    function getPath(dirname) {
-        const part = path.relative(options.dir, dirname);
-
-        if (part) {
-            return part.split('/').join(':');
-        }
-
-        return '';
-    }
+export default function(params) {
+    const options = getOptions(params);
+    const logger = new Logger(options.verbose);
+    const group = new Group(options.group);
 
     glob.sync(path.join(options.dir, '/**/*.js')).forEach(function onForEach(file) {
         let taskFullName = '';
 
         try {
             const taskName = path.basename(file, '.js');
-            const taskPath = getPath(path.dirname(file));
+            const taskPath = getPath(options.dir, path.dirname(file));
             const factory = getFactory(require(file));
 
             if (taskPath) {
@@ -90,13 +39,27 @@ export default function(options) {
             }
 
             options.gulp.task(taskFullName, factory(...options.args));
+            group.push(taskFullName);
 
-            info('Registered task:', taskFullName);
-        } catch (ex) {
-            error(`Error during '${taskFullName}' task registration.`, ex.toString());
+            logger.info(chalk.cyan(SUCESS_MESSAGE), chalk.magenta(taskFullName));
+        } catch (err) {
+            logger.error(chalk.red(FAILURE_MESSAGE), chalk.magenta(taskFullName), err.toString());
 
             if (options.panic) {
-                throw ex;
+                throw err;
+            }
+        }
+    });
+
+    group.forEach((task) => {
+        try {
+            options.gulp.task(task.name, task.dependencies, done => done());
+            logger.info(chalk.cyan(SUCESS_MESSAGE), chalk.magenta(task.name));
+        } catch (err) {
+            logger.error(chalk.red(FAILURE_MESSAGE), chalk.magenta(task.name), err.toString());
+
+            if (options.panic) {
+                throw err;
             }
         }
     });

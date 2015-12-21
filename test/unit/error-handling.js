@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import chai from 'chai';
 import path from 'path';
 import registrator from '../../index';
@@ -34,3 +35,4 @@ describe('error handling', () => {
         });
     });
 });
+/* eslint-enable no-unused-expressions */

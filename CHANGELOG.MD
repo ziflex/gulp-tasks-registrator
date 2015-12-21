@@ -1,3 +1,10 @@
+## 0.2.0
+
+### Added
+
+* Automatically generated group task
+* Colorized console output
+
 ## 0.1.1
 
 ### Fixed
