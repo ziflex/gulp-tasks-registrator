@@ -41,9 +41,9 @@ export default function(params) {
             options.gulp.task(taskFullName, factory(...options.args));
             group.push(taskFullName);
 
-            logger.info(chalk.cyan(SUCESS_MESSAGE), chalk.magenta(taskFullName));
+            logger.info(SUCESS_MESSAGE, chalk.cyan(taskFullName));
         } catch (err) {
-            logger.error(chalk.red(FAILURE_MESSAGE), chalk.magenta(taskFullName), err.toString());
+            logger.error(FAILURE_MESSAGE, chalk.cyan(taskFullName), err.toString());
 
             if (options.panic) {
                 throw err;
@@ -54,9 +54,9 @@ export default function(params) {
     group.forEach((task) => {
         try {
             options.gulp.task(task.name, task.dependencies, done => done());
-            logger.info(chalk.cyan(SUCESS_MESSAGE), chalk.magenta(task.name));
+            logger.info(SUCESS_MESSAGE, chalk.cyan(task.name));
         } catch (err) {
-            logger.error(chalk.red(FAILURE_MESSAGE), chalk.magenta(task.name), err.toString());
+            logger.error(FAILURE_MESSAGE, chalk.cyan(task.name), err.toString());
 
             if (options.panic) {
                 throw err;

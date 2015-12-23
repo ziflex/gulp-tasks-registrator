@@ -74,6 +74,46 @@ Factory will receive any arguments that were passed into registrator.
 
 ````
 
+## Grouping tasks
+Since we can not specify dependencies for our tasks, we can group them with, so called, high order tasks, just by setting ```group``` parameter to ```true```.
+
+```javascript
+
+    require('gulp-tasks-registrator')({
+        gulp: gulp,
+        dir: path.join(__dirname, '/tasks'),
+        args: [gulp],
+        group: true
+    });
+
+```
+
+For example, we have this folder structure with our tasks:
+
+````sh
+
+    tasks
+        env.js
+        build
+            scripts.js
+            styles.js
+            assets.js
+
+````
+
+Except regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).
+
+It will be the same if we created it manually, like this:
+
+````javascript
+
+    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {
+        done();
+    });
+
+````
+
+
 ### API
 
 #### registrator(options)

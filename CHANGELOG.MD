@@ -1,3 +1,11 @@
+## 0.2.1
+
+### Fixed
+* Group by root folder (task with empty name was registered)
+
+### Changed
+* Output colors
+
 ## 0.2.0
 
 ### Added

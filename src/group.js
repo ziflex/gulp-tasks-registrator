@@ -28,6 +28,11 @@ export default class Group {
 
         const parent = parts.slice(0, parts.length - 1).join(':');
 
+        // task in root folder, skip it
+        if (!parent) {
+            return;
+        }
+
         this.push(parent);
 
         let task = this._tasks[parent];

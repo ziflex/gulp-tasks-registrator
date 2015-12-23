@@ -1,6 +1,6 @@
 {
   "name": "gulp-tasks-registrator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Registers gulp tasks from folders",
   "main": "lib/index.js",
   "scripts": {

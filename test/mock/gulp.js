@@ -8,6 +8,10 @@ export default class GulpMock {
         const dependencies = args.length === 3 ? args[1] : null;
         const func = args.length === 3 ? args[2] : args[1];
 
+        if (!name) {
+            throw new Error('Missed task name!');
+        }
+
         this._tasks.push({ name, dependencies, func });
     }
 

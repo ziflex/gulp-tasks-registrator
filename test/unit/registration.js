@@ -127,7 +127,7 @@ describe('registration', () => {
                 gulp,
                 dir: path.join(__dirname, '../fixtures/nesting'),
                 panic: true,
-                verbose: false,
+                verbose: true,
                 group: true
             });
 
