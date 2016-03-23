@@ -2,7 +2,7 @@
 import chai from 'chai';
 import spies from 'chai-spies';
 import path from 'path';
-import registrator from '../../index';
+import registrator from '../../src/index';
 import GulpMock from '../mock/gulp';
 
 chai.use(spies);

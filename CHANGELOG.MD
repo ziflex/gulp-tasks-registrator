@@ -1,3 +1,8 @@
+## 0.2.2
+
+### Fixed
+* Parsing task path on Windows
+
 ## 0.2.1
 
 ### Fixed

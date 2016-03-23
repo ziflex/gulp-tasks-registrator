@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai';
-import registrator from '../../index';
+import registrator from '../../src/index';
 
 const expect = chai.expect;
 

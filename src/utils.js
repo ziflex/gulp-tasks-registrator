@@ -64,7 +64,7 @@ export function getPath(root, current) {
     const part = path.relative(root, current);
 
     if (part) {
-        return part.split('/').join(':');
+        return part.split(/\/|\\/g).join(':');
     }
 
     return '';

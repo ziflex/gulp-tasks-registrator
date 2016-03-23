@@ -24,7 +24,7 @@ export default function(params) {
     const logger = new Logger(options.verbose);
     const group = new Group(options.group);
 
-    glob.sync(path.join(options.dir, '/**/*.js')).forEach(function onForEach(file) {
+    glob.sync(path.join(options.dir, '/**/*.js')).forEach((file) => {
         let taskFullName = '';
 
         try {

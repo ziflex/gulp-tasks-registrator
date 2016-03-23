@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai';
 import path from 'path';
-import registrator from '../../index';
+import registrator from '../../src/index';
 import GulpMock from '../mock/gulp';
 
 const expect = chai.expect;
