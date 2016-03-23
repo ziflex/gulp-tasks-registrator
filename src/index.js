@@ -19,7 +19,7 @@ const FAILURE_MESSAGE = 'Failed to register task:';
  * @param params.panic {Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true.
  * @param params.group {Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies.
  */
-export default function(params) {
+module.exports = function registrator(params) {
     const options = getOptions(params);
     const logger = new Logger(options.verbose);
     const group = new Group(options.group);
@@ -63,4 +63,4 @@ export default function(params) {
             }
         }
     });
-}
+};
