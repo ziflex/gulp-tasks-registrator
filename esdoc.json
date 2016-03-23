@@ -3,6 +3,9 @@
   "destination": "./doc",
   "index": "./README.md",
   "package": "./package.json",
+  "manual": {
+    "changelog": ["./CHANGELOG.md"]
+  },
   "test": {
     "type": "mocha",
     "source": "./test/unit"
