@@ -1,0 +1,19 @@
+{
+  "coverage": "75%",
+  "expectCount": 4,
+  "actualCount": 3,
+  "files": {
+    "src/group.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        68
+      ]
+    },
+    "src/utils.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    }
+  }
+}

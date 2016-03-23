@@ -1,7 +1,7 @@
 /**
  * Represents a tasks group.
  */
-export default class Group {
+class Group {
     /**
      * Creates a tasks group.
      * @param {boolean} enabled - Defines whether grouping is enabled.
@@ -63,4 +63,8 @@ export default class Group {
             }
         }
     }
+}
+
+export default function create(...args) {
+    return new Group(...args);
 }

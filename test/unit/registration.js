@@ -98,7 +98,7 @@ describe('registration', () => {
     describe('task arguments', () => {
         it('should pass multiple arguments to factory', () => {
             const arg1 = 'foo';
-            const arg2 = {bar: 'qaz'};
+            const arg2 = { bar: 'qaz' };
 
             registrator({
                 gulp,

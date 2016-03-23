@@ -1,6 +1,5 @@
 import glob from 'glob';
 import path from 'path';
-import chalk from 'chalk';
 import { getOptions, getFactory, getPath } from './utils';
 import Logger from './logger';
 import Group from './group';
@@ -21,8 +20,8 @@ const FAILURE_MESSAGE = 'Failed to register task:';
  */
 module.exports = function registrator(params) {
     const options = getOptions(params);
-    const logger = new Logger(options.verbose);
-    const group = new Group(options.group);
+    const logger = Logger.create(options.verbose);
+    const group = Group(options.group);
 
     glob.sync(path.join(options.dir, '/**/*.js')).forEach((file) => {
         let taskFullName = '';
@@ -41,9 +40,9 @@ module.exports = function registrator(params) {
             options.gulp.task(taskFullName, factory(...options.args));
             group.push(taskFullName);
 
-            logger.info(SUCESS_MESSAGE, chalk.cyan(taskFullName));
+            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(taskFullName));
         } catch (err) {
-            logger.error(FAILURE_MESSAGE, chalk.cyan(taskFullName), err.toString());
+            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(taskFullName), err.toString());
 
             if (options.panic) {
                 throw err;
@@ -54,9 +53,9 @@ module.exports = function registrator(params) {
     group.forEach((task) => {
         try {
             options.gulp.task(task.name, task.dependencies, done => done());
-            logger.info(SUCESS_MESSAGE, chalk.cyan(task.name));
+            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(task.name));
         } catch (err) {
-            logger.error(FAILURE_MESSAGE, chalk.cyan(task.name), err.toString());
+            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(task.name), err.toString());
 
             if (options.panic) {
                 throw err;

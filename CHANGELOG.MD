@@ -1,4 +1,8 @@
-## 0.2.2
+## 0.2.4
+### Changed
+* Using gulp-util for logging.
+
+## 0.2.3
 
 ### Fixed
 * Parsing task path on Windows
