@@ -1,3 +1,24 @@
+## 0.3.0
+### Added
+* Now tasks can define their dependencies    
+
+```js
+
+    export default function factory() {
+        const task3 = function task3(done) {
+            done();
+        };
+
+        task3.dependencies = ['task-1', 'task-2'];
+
+        return task3;
+    }
+
+```
+
+### Fixed
+* Group task failed if first given argument is not a function
+
 ## 0.2.4
 ### Changed
 * Using gulp-util for logging.

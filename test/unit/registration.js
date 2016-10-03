@@ -193,5 +193,20 @@ describe('registration', () => {
             });
         });
     });
+
+    describe('dependencies', () => {
+        it('should register tasks with dependencies', () => {
+            registrator({
+                gulp,
+                dir: path.join(__dirname, '../fixtures/with-deps/'),
+                panic: true,
+                verbose: true
+            });
+
+            const tasks = gulp.getTasks();
+            const task = tasks.find(i => i.name === 'task-3');
+            expect(task.dependencies).to.eql(['task-1', 'task-2']);
+        });
+    });
 });
 /* eslint-enable no-unused-expressions */

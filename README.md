@@ -1,12 +1,13 @@
 # gulp-tasks-registrator
 
+> Split your gulpfile into small isolated tasks
+
 Gulp tasks registrator.
 
 [![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)
 [![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  
 
-Registrator runs through a target directory and tries to register found ```.js``` files as gulp tasks.  
-
+Registrator runs through a given directory and registers found ```.js``` files as gulp tasks.  
 
 ## Install
 
