@@ -40,7 +40,7 @@ module.exports = function registrator(params) {
 
             const task = factory(...options.args);
 
-            options.gulp.task(taskFullName, task.dependencies, task);
+            options.gulp.task(taskFullName, task.dependencies || [], task);
 
             group.push(taskFullName);
 
