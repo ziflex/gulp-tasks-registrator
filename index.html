@@ -42,7 +42,7 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="gulp-tasks-registrator">gulp-tasks-registrator</h1>
 <blockquote>
-<p>Split your gulpfile into small isolated tasks</p>
+<p>Clean up your Gulpfile by splitting it into small isolated tasks</p>
 </blockquote>
 <p>Gulp tasks registrator.</p>
 <p><a href="https://www.npmjs.com/package/gulp-tasks-registrator"><img src="https://badge.fury.io/js/gulp-tasks-registrator.svg" alt="npm version"></a>
@@ -99,7 +99,7 @@
 `</code>
 </code></pre>
 <h2 id="grouping-tasks">Grouping tasks</h2>
-<p>Since we can not specify dependencies for our tasks, we can group them with, so called, high order tasks, just by setting <code>group</code> parameter to <code>true</code>.</p>
+<p>We can group small tasks with, so called, high order tasks, just by setting <code>group</code> parameter to <code>true</code>.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">
     require(&apos;gulp-tasks-registrator&apos;)({
         gulp: gulp,
@@ -123,6 +123,19 @@
     gulp.task(&apos;build&apos;, [&apos;build:scripts&apos;, &apos;build:styles&apos;, &apos;build:assets&apos;], function(done) {
         done();
     });</code>
+</code></pre>
+<h2 id="tasks-dependencies">Tasks dependencies</h2>
+<p>Also, since version 0.3.0, it is possible to define dependencies for each tasks:</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">
+    module.exports = function factory($) {
+        const task = task() {
+            return $.gulp.src(...)
+        };
+
+        task.dependencies = [&apos;task1&apos;, &apos;task2&apos;];
+
+        return task;
+    };</code>
 </code></pre>
 <h3 id="api">API</h3>
 <h4 id="registrator-options-">registrator(options)</h4>
