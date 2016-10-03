@@ -1,6 +1,6 @@
 # gulp-tasks-registrator
 
-> Split your gulpfile into small isolated tasks
+> Clean up your Gulpfile by splitting it into small isolated tasks
 
 Gulp tasks registrator.
 
@@ -76,7 +76,7 @@ Factory will receive any arguments that were passed into registrator.
 ````
 
 ## Grouping tasks
-Since we can not specify dependencies for our tasks, we can group them with, so called, high order tasks, just by setting ```group``` parameter to ```true```.
+We can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.
 
 ```javascript
 
@@ -114,6 +114,22 @@ It will be the same if we created it manually, like this:
 
 ````
 
+## Tasks dependencies
+Also, since version 0.3.0, it is possible to define dependencies for each tasks:
+
+````javascript
+
+    module.exports = function factory($) {
+        const task = task() {
+            return $.gulp.src(...)
+        };
+
+        task.dependencies = ['task1', 'task2'];
+
+        return task;
+    };
+
+````
 
 ### API
 
