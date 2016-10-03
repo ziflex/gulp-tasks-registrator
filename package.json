@@ -1,6 +1,6 @@
 {
   "name": "gulp-tasks-registrator",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Registers gulp tasks from folders",
   "main": "lib/index.js",
   "scripts": {
@@ -16,8 +16,6 @@
   "keywords": [
     "gulp",
     "task",
-    "manager",
-    "injector",
     "loader"
   ],
   "author": "Tim Voronov <ziflex@gmail.com>",
