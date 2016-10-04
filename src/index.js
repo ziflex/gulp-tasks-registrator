@@ -4,7 +4,6 @@ import { getOptions, getFactory, getPath } from './utils';
 import Logger from './logger';
 import Group from './group';
 
-const NOOP = function noop() {};
 const SUCESS_MESSAGE = 'Registered task:';
 const FAILURE_MESSAGE = 'Failed to register task:';
 
@@ -56,7 +55,7 @@ module.exports = function registrator(params) {
 
     group.forEach((task) => {
         try {
-            options.gulp.task(task.name, task.dependencies, NOOP);
+            options.gulp.task(task.name, task.dependencies);
             logger.info(SUCESS_MESSAGE, Logger.colors.cyan(task.name));
         } catch (err) {
             logger.error(FAILURE_MESSAGE, Logger.colors.cyan(task.name), err.toString());

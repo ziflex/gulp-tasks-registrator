@@ -179,7 +179,7 @@ describe('registration', () => {
 
             expectedTasks.forEach((expectedTask) => {
                 const task = tasks[expectedTask.name];
-                expect(task).to.exist;
+                expect(task, expectedTask.name).to.exist;
 
                 if (expectedTask.dependencies) {
                     expect(task.dependencies).to.exist;

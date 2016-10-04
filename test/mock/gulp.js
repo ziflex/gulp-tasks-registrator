@@ -1,18 +1,26 @@
+function noop() {}
+
 export default class GulpMock {
     constructor() {
         this._tasks = [];
     }
 
-    task(...args) {
-        const name = args[0];
-        const dependencies = args.length === 3 ? args[1] : null;
-        const func = args.length === 3 ? args[2] : args[1];
+    task(name, deps, handler) {
+        let dependencies = null;
+        let func = null;
+
+        if (Array.isArray(deps)) {
+            dependencies = deps;
+            func = handler;
+        } else if (typeof deps === 'function') {
+            func = deps;
+        }
 
         if (!name) {
             throw new Error('Missed task name!');
         }
 
-        this._tasks.push({ name, dependencies, func });
+        this._tasks.push({ name, dependencies, func: func || noop });
     }
 
     getTasks() {

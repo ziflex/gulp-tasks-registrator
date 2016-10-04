@@ -11,7 +11,8 @@
     "test": "npm run lint && mocha --reporter spec --require babel-register --recursive test",
     "build:doc": "npm run clean:doc && esdoc -c ./esdoc.json",
     "build:js": "npm run lint && npm run clean:js && babel src --out-dir lib",
-    "build": "npm run test && npm run build:js && npm run build:doc"
+    "build": "npm run test && npm run build:js && npm run build:doc",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "gulp",
