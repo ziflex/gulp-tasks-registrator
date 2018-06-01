@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/group.js | gulp-tasks-registrator</title>
+  <title data-ice="title">src/filter.js | gulp-tasks-registrator</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -38,83 +38,19 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/group.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Represents a tasks group.
- */
-class Group {
-    /**
-     * Creates a tasks group.
-     * @param {boolean} enabled - Defines whether grouping is enabled.
-     */
-    constructor(enabled) {
-        this._enabled = enabled;
-        this._tasks = Object.create(null);
+<div class="content" data-ice="content"><h1 data-ice="title">src/filter.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export default function filter(value) {
+    if (value == null) {
+        return () =&gt; true;
     }
 
-    push(path) {
-        if (!this._enabled) {
-            return;
-        }
+    if (typeof value === &apos;string&apos;) {
+        const reg = new RegExp(value);
 
-        if (!path) {
-            return;
-        }
-
-        const parts = path.split(&apos;:&apos;);
-
-        if (parts.length &lt;= 0) {
-            return;
-        }
-
-        const parent = parts.slice(0, parts.length - 1).join(&apos;:&apos;);
-
-        // task in root folder, skip it
-        if (!parent) {
-            return;
-        }
-
-        this.push(parent);
-
-        let task = this._tasks[parent];
-
-        if (!task) {
-            task = {
-                name: parent,
-                dependencies: []
-            };
-            this._tasks[parent] = task;
-        }
-
-        if (task.dependencies.indexOf(path) &lt; 0) {
-            task.dependencies.push(path);
-        }
+        return path =&gt; reg.test(path);
     }
 
-    forEach(iteratee) {
-        if (!this._enabled) {
-            return;
-        }
-
-        const tasks = this._tasks;
-        const keys = Object.keys(tasks);
-        const len = keys.length;
-        let i = 0;
-
-        while (i &lt; len) {
-            const prop = keys[i];
-
-            if (tasks[prop]) {
-                iteratee(tasks[prop]);
-            }
-
-            i += 1;
-        }
-    }
-}
-
-export default function create(...args) {
-    return new Group(...args);
+    return value;
 }
 </code></pre>
 

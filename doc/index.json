@@ -566,8 +566,49 @@
   {
     "__docId__": 48,
     "kind": "file",
+    "name": "src/filter.js",
+    "content": "export default function filter(value) {\n    if (value == null) {\n        return () => true;\n    }\n\n    if (typeof value === 'string') {\n        const reg = new RegExp(value);\n\n        return path => reg.test(path);\n    }\n\n    return value;\n}\n",
+    "static": true,
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/filter.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "filter",
+    "memberof": "src/filter.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/filter.js~filter",
+    "access": "public",
+    "export": true,
+    "importPath": "gulp-tasks-registrator/src/filter.js",
+    "importStyle": "filter",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
     "name": "src/group.js",
-    "content": "/**\n * Represents a tasks group.\n */\nclass Group {\n    /**\n     * Creates a tasks group.\n     * @param {boolean} enabled - Defines whether grouping is enabled.\n     */\n    constructor(enabled) {\n        this._enabled = enabled;\n        this._tasks = Object.create(null);\n    }\n\n    push(path) {\n        if (!this._enabled) {\n            return;\n        }\n\n        if (!path) {\n            return;\n        }\n\n        const parts = path.split(':');\n\n        if (parts.length <= 0) {\n            return;\n        }\n\n        const parent = parts.slice(0, parts.length - 1).join(':');\n\n        // task in root folder, skip it\n        if (!parent) {\n            return;\n        }\n\n        this.push(parent);\n\n        let task = this._tasks[parent];\n\n        if (!task) {\n            task = {\n                name: parent,\n                dependencies: []\n            };\n            this._tasks[parent] = task;\n        }\n\n        if (task.dependencies.indexOf(path) < 0) {\n            task.dependencies.push(path);\n        }\n    }\n\n    forEach(iteratee) {\n        if (!this._enabled) {\n            return;\n        }\n\n        const tasks = this._tasks;\n\n        for (const prop in tasks) {\n            if (tasks[prop]) {\n                iteratee(tasks[prop]);\n            }\n        }\n    }\n}\n\nexport default function create(...args) {\n    return new Group(...args);\n}\n",
+    "content": "/**\n * Represents a tasks group.\n */\nclass Group {\n    /**\n     * Creates a tasks group.\n     * @param {boolean} enabled - Defines whether grouping is enabled.\n     */\n    constructor(enabled) {\n        this._enabled = enabled;\n        this._tasks = Object.create(null);\n    }\n\n    push(path) {\n        if (!this._enabled) {\n            return;\n        }\n\n        if (!path) {\n            return;\n        }\n\n        const parts = path.split(':');\n\n        if (parts.length <= 0) {\n            return;\n        }\n\n        const parent = parts.slice(0, parts.length - 1).join(':');\n\n        // task in root folder, skip it\n        if (!parent) {\n            return;\n        }\n\n        this.push(parent);\n\n        let task = this._tasks[parent];\n\n        if (!task) {\n            task = {\n                name: parent,\n                dependencies: []\n            };\n            this._tasks[parent] = task;\n        }\n\n        if (task.dependencies.indexOf(path) < 0) {\n            task.dependencies.push(path);\n        }\n    }\n\n    forEach(iteratee) {\n        if (!this._enabled) {\n            return;\n        }\n\n        const tasks = this._tasks;\n        const keys = Object.keys(tasks);\n        const len = keys.length;\n        let i = 0;\n\n        while (i < len) {\n            const prop = keys[i];\n\n            if (tasks[prop]) {\n                iteratee(tasks[prop]);\n            }\n\n            i += 1;\n        }\n    }\n}\n\nexport default function create(...args) {\n    return new Group(...args);\n}\n",
     "static": true,
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/group.js",
     "access": "public",
@@ -575,7 +616,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 49,
+    "__docId__": 51,
     "kind": "class",
     "name": "Group",
     "memberof": "src/group.js",
@@ -591,7 +632,7 @@
     "ignore": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 52,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/group.js~Group",
@@ -616,7 +657,7 @@
     ]
   },
   {
-    "__docId__": 51,
+    "__docId__": 53,
     "kind": "member",
     "name": "_enabled",
     "memberof": "src/group.js~Group",
@@ -633,7 +674,7 @@
     }
   },
   {
-    "__docId__": 52,
+    "__docId__": 54,
     "kind": "member",
     "name": "_tasks",
     "memberof": "src/group.js~Group",
@@ -650,7 +691,7 @@
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 55,
     "kind": "method",
     "name": "push",
     "memberof": "src/group.js~Group",
@@ -673,7 +714,7 @@
     "return": null
   },
   {
-    "__docId__": 54,
+    "__docId__": 56,
     "kind": "method",
     "name": "forEach",
     "memberof": "src/group.js~Group",
@@ -696,7 +737,7 @@
     "return": null
   },
   {
-    "__docId__": 55,
+    "__docId__": 57,
     "kind": "function",
     "name": "create",
     "memberof": "src/group.js",
@@ -709,7 +750,7 @@
     "importPath": "gulp-tasks-registrator/src/group.js",
     "importStyle": "create",
     "description": null,
-    "lineNumber": 68,
+    "lineNumber": 75,
     "undocument": true,
     "params": [
       {
@@ -727,10 +768,10 @@
     }
   },
   {
-    "__docId__": 56,
+    "__docId__": 58,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import glob from 'glob';\nimport path from 'path';\nimport { getOptions, getFactory, getPath } from './utils';\nimport Logger from './logger';\nimport Group from './group';\n\nconst SUCESS_MESSAGE = 'Registered task:';\nconst FAILURE_MESSAGE = 'Failed to register task:';\n\n/**\n * Iterates over target directory and registers gulp tasks by invoking task factories.\n * Task name is based on its path.\n * @param params\n * @param params.gulp {Object} - Gulp instance.\n * @param params.dir {String} - Full path to task factories directory.\n * @param params.args {Array<any>} - Arguments to pass to task factories. optionsional.\n * @param params.verbose {Boolean} - Defines whether to push to console logs. optionsional. Default false.\n * @param params.panic {Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true.\n * @param params.group {Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies.\n */\nmodule.exports = function registrator(params) {\n    const options = getOptions(params);\n    const logger = Logger.create(options.verbose);\n    const group = Group(options.group);\n\n    glob.sync(path.join(options.dir, '/**/*.js')).forEach((file) => {\n        let taskFullName = '';\n\n        try {\n            const taskName = path.basename(file, '.js');\n            const taskPath = getPath(options.dir, path.dirname(file));\n            const factory = getFactory(require(file));\n\n            if (taskPath) {\n                taskFullName = `${taskPath}:${taskName}`;\n            } else {\n                taskFullName = taskName;\n            }\n\n            const task = factory(...options.args);\n\n            options.gulp.task(taskFullName, task.dependencies || [], task);\n\n            group.push(taskFullName);\n\n            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(taskFullName));\n        } catch (err) {\n            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(taskFullName), err.toString());\n\n            if (options.panic) {\n                throw err;\n            }\n        }\n    });\n\n    group.forEach((task) => {\n        try {\n            options.gulp.task(task.name, task.dependencies);\n            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(task.name));\n        } catch (err) {\n            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(task.name), err.toString());\n\n            if (options.panic) {\n                throw err;\n            }\n        }\n    });\n};\n",
+    "content": "import glob from 'glob';\nimport path from 'path';\nimport { getOptions, getFactory, getPath } from './utils';\nimport Logger from './logger';\nimport Group from './group';\nimport Filter from './filter';\n\nconst SUCESS_MESSAGE = 'Registered task:';\nconst FAILURE_MESSAGE = 'Failed to register task:';\n\n/**\n * Iterates over target directory and registers gulp tasks by invoking task factories.\n * Task name is based on its path.\n * @param params\n * @param params.gulp {Object} - Gulp instance.\n * @param params.dir {String} - Full path to task factories directory.\n * @param params.args {Array<any>} - Arguments to pass to task factories. optionsional.\n * @param params.verbose {Boolean} - Defines whether to push to console logs. optionsional. Default false.\n * @param params.panic {Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true.\n * @param params.group {Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies.\n * @param params.filter {String|Function} - Defines a filter using either a regexp expression or a function. Optional.\n */\nmodule.exports = function registrator(params) {\n    const options = getOptions(params);\n    const logger = Logger.create(options.verbose);\n    const group = Group(options.group);\n    const filter = Filter(options.filter);\n\n    glob.sync(path.join(options.dir, '/**/*.js')).forEach((file) => {\n        let taskFullName = '';\n\n        try {\n            const taskName = path.basename(file, '.js');\n            const taskPath = getPath(options.dir, path.dirname(file));\n            const factory = getFactory(require(file));\n\n            if (filter(file) === true) {\n                if (taskPath) {\n                    taskFullName = `${taskPath}:${taskName}`;\n                } else {\n                    taskFullName = taskName;\n                }\n\n                const task = factory(...options.args);\n\n                options.gulp.task(taskFullName, task.dependencies || [], task);\n\n                group.push(taskFullName);\n\n                logger.info(SUCESS_MESSAGE, Logger.colors.cyan(taskFullName));\n            }\n        } catch (err) {\n            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(taskFullName), err.toString());\n\n            if (options.panic) {\n                throw err;\n            }\n        }\n    });\n\n    group.forEach((task) => {\n        try {\n            options.gulp.task(task.name, task.dependencies);\n            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(task.name));\n        } catch (err) {\n            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(task.name), err.toString());\n\n            if (options.panic) {\n                throw err;\n            }\n        }\n    });\n};\n",
     "static": true,
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/index.js",
     "access": "public",
@@ -738,33 +779,12 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 57,
+    "__docId__": 59,
     "kind": "variable",
     "name": "SUCESS_MESSAGE",
     "memberof": "src/index.js",
     "static": true,
     "longname": "src/index.js~SUCESS_MESSAGE",
-    "access": "public",
-    "export": false,
-    "importPath": "gulp-tasks-registrator/src/index.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
-    "type": {
-      "types": [
-        "string"
-      ]
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 58,
-    "kind": "variable",
-    "name": "FAILURE_MESSAGE",
-    "memberof": "src/index.js",
-    "static": true,
-    "longname": "src/index.js~FAILURE_MESSAGE",
     "access": "public",
     "export": false,
     "importPath": "gulp-tasks-registrator/src/index.js",
@@ -780,7 +800,28 @@
     "ignore": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
+    "kind": "variable",
+    "name": "FAILURE_MESSAGE",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~FAILURE_MESSAGE",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 61,
     "kind": "function",
     "name": "exports",
     "memberof": "src/index.js",
@@ -793,7 +834,7 @@
     "importPath": "gulp-tasks-registrator/src/index.js",
     "importStyle": null,
     "description": "Iterates over target directory and registers gulp tasks by invoking task factories.\nTask name is based on its path.",
-    "lineNumber": 21,
+    "lineNumber": 23,
     "params": [
       {
         "nullable": null,
@@ -864,16 +905,26 @@
         "optional": false,
         "name": "params.group",
         "description": "{Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.filter",
+        "description": "{String|Function} - Defines a filter using either a regexp expression or a function. Optional."
       }
     ],
     "return": null,
     "ignore": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 62,
     "kind": "file",
     "name": "src/logger.js",
-    "content": "import gutil from 'gulp-util';\n\n/**\n* Represents a logger.\n*/\nclass Logger {\n    /**\n     * Creates a logger.\n     * @param verbose {Boolean} - Define whether it should write logs to output stream.\n     * @returns {Object} - Logger.\n     */\n    constructor(verbose = true) {\n        this._verbose = verbose;\n    }\n\n    error(...args) {\n        if (this._verbose) {\n            gutil.log(...args);\n        }\n    }\n\n    warn(...args) {\n        if (this._verbose) {\n            gutil.log(...args);\n        }\n    }\n\n    info(...args) {\n        if (this._verbose) {\n            gutil.log(...args);\n        }\n    }\n}\n\nexport default {\n    create(...args) {\n        return new Logger(...args);\n    },\n\n    colors: gutil.colors\n};\n",
+    "content": "import log from 'fancy-log';\nimport chalk from 'chalk';\n\n/**\n* Represents a logger.\n*/\nclass Logger {\n    /**\n     * Creates a logger.\n     * @param verbose {Boolean} - Define whether it should write logs to output stream.\n     * @returns {Object} - Logger.\n     */\n    constructor(verbose = true) {\n        this.verbose = verbose;\n    }\n\n    error(...args) {\n        if (this.verbose) {\n            log.error(...args);\n        }\n    }\n\n    warn(...args) {\n        if (this.verbose) {\n            log.warn(...args);\n        }\n    }\n\n    info(...args) {\n        if (this.verbose) {\n            log.info(...args);\n        }\n    }\n}\n\nexport default {\n    create(...args) {\n        return new Logger(...args);\n    },\n\n    colors: chalk\n};\n",
     "static": true,
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/logger.js",
     "access": "public",
@@ -881,7 +932,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 61,
+    "__docId__": 63,
     "kind": "class",
     "name": "Logger",
     "memberof": "src/logger.js",
@@ -892,12 +943,12 @@
     "importPath": "gulp-tasks-registrator/src/logger.js",
     "importStyle": null,
     "description": "Represents a logger.",
-    "lineNumber": 6,
+    "lineNumber": 7,
     "interface": false,
     "ignore": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 64,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/logger.js~Logger",
@@ -907,7 +958,7 @@
     "longname": "src/logger.js~Logger#constructor",
     "access": "public",
     "description": "Creates a logger.",
-    "lineNumber": 12,
+    "lineNumber": 13,
     "unknown": [
       {
         "tagName": "@returns",
@@ -936,15 +987,15 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 65,
     "kind": "member",
-    "name": "_verbose",
+    "name": "verbose",
     "memberof": "src/logger.js~Logger",
     "static": false,
-    "longname": "src/logger.js~Logger#_verbose",
-    "access": "private",
+    "longname": "src/logger.js~Logger#verbose",
+    "access": "public",
     "description": null,
-    "lineNumber": 13,
+    "lineNumber": 14,
     "undocument": true,
     "type": {
       "types": [
@@ -953,7 +1004,7 @@
     }
   },
   {
-    "__docId__": 64,
+    "__docId__": 66,
     "kind": "method",
     "name": "error",
     "memberof": "src/logger.js~Logger",
@@ -963,55 +1014,7 @@
     "longname": "src/logger.js~Logger#error",
     "access": "public",
     "description": null,
-    "lineNumber": 16,
-    "undocument": true,
-    "params": [
-      {
-        "name": "args",
-        "types": [
-          "...*"
-        ],
-        "spread": true
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 65,
-    "kind": "method",
-    "name": "warn",
-    "memberof": "src/logger.js~Logger",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/logger.js~Logger#warn",
-    "access": "public",
-    "description": null,
-    "lineNumber": 22,
-    "undocument": true,
-    "params": [
-      {
-        "name": "args",
-        "types": [
-          "...*"
-        ],
-        "spread": true
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 66,
-    "kind": "method",
-    "name": "info",
-    "memberof": "src/logger.js~Logger",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/logger.js~Logger#info",
-    "access": "public",
-    "description": null,
-    "lineNumber": 28,
+    "lineNumber": 17,
     "undocument": true,
     "params": [
       {
@@ -1026,9 +1029,57 @@
   },
   {
     "__docId__": 67,
+    "kind": "method",
+    "name": "warn",
+    "memberof": "src/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/logger.js~Logger#warn",
+    "access": "public",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "info",
+    "memberof": "src/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/logger.js~Logger#info",
+    "access": "public",
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 69,
     "kind": "file",
     "name": "src/utils.js",
-    "content": "import path from 'path';\n\nconst OPTIONS_NOT_FOUND_ERROR = 'Options are missed';\nconst GULP_NOT_DEFINED_ERROR = 'Gulp is missed!';\nconst DIR_NOT_DEFINED_ERROR = 'Target directory is missed!';\nconst INVALID_MODULE_ERROR = 'Invalid task factory module';\n\n/**\n * Validates and builds options.\n * @param params {Object} - Passed options.\n * @returns {Object} - Normalized options.\n */\nexport function getOptions(params) {\n    if (!params) {\n        throw new Error(OPTIONS_NOT_FOUND_ERROR);\n    }\n\n    if (!params.gulp) {\n        throw new Error(GULP_NOT_DEFINED_ERROR);\n    }\n\n    if (!params.dir) {\n        throw new Error(DIR_NOT_DEFINED_ERROR);\n    }\n\n    return {\n        gulp: params.gulp,\n        dir: params.dir,\n        args: params.args || [],\n        panic: !!params.panic,\n        group: !!params.group,\n        verbose: !!params.verbose\n    };\n}\n\n/**\n * Returns task's factory function.\n * @param module {Any} - Target module.\n * @returns {Function} - Task's factory function.\n */\nexport function getFactory(module) {\n    if (!module) {\n        throw new Error(INVALID_MODULE_ERROR);\n    }\n\n    if (typeof module === 'function') {\n        return module;\n    }\n\n    if (typeof module.default === 'function') {\n        return module.default;\n    }\n\n    throw new Error(INVALID_MODULE_ERROR);\n}\n\n/**\n * Creates task's path.\n * @param root {String} - Root directory.\n * @param current {String} - Current task's directory.\n * @returns {String} - Task's fpath.\n */\nexport function getPath(root, current) {\n    const part = path.relative(root, current);\n\n    if (part) {\n        return part.split(/\\/|\\\\/g).join(':');\n    }\n\n    return '';\n}\n",
+    "content": "import path from 'path';\n\nconst OPTIONS_NOT_FOUND_ERROR = 'Options are missed';\nconst GULP_NOT_DEFINED_ERROR = 'Gulp is missed';\nconst DIR_NOT_DEFINED_ERROR = 'Target directory is missed';\nconst INVALID_MODULE_ERROR = 'Invalid task factory module';\nconst INVALID_FILTER_ERROR = 'Invalid task filter';\n\n/**\n * Validates and builds options.\n * @param params {Object} - Passed options.\n * @returns {Object} - Normalized options.\n */\nexport function getOptions(params) {\n    if (!params) {\n        throw new Error(OPTIONS_NOT_FOUND_ERROR);\n    }\n\n    if (!params.gulp) {\n        throw new Error(GULP_NOT_DEFINED_ERROR);\n    }\n\n    if (!params.dir) {\n        throw new Error(DIR_NOT_DEFINED_ERROR);\n    }\n\n    if (params.filter != null) {\n        if (typeof params.filter !== 'string' && typeof params.filter !== 'function') {\n            throw new Error(INVALID_FILTER_ERROR);\n        }\n    }\n\n    return {\n        gulp: params.gulp,\n        dir: params.dir,\n        args: params.args || [],\n        panic: !!params.panic,\n        group: !!params.group,\n        verbose: !!params.verbose,\n        filter: params.filter\n    };\n}\n\n/**\n * Returns task's factory function.\n * @param module {Any} - Target module.\n * @returns {Function} - Task's factory function.\n */\nexport function getFactory(module) {\n    if (!module) {\n        throw new Error(INVALID_MODULE_ERROR);\n    }\n\n    if (typeof module === 'function') {\n        return module;\n    }\n\n    if (typeof module.default === 'function') {\n        return module.default;\n    }\n\n    throw new Error(INVALID_MODULE_ERROR);\n}\n\n/**\n * Creates task's path.\n * @param root {String} - Root directory.\n * @param current {String} - Current task's directory.\n * @returns {String} - Task's fpath.\n */\nexport function getPath(root, current) {\n    const part = path.relative(root, current);\n\n    if (part) {\n        return part.split(/\\/|\\\\/g).join(':');\n    }\n\n    return '';\n}\n",
     "static": true,
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/utils.js",
     "access": "public",
@@ -1036,7 +1087,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 68,
+    "__docId__": 70,
     "kind": "variable",
     "name": "OPTIONS_NOT_FOUND_ERROR",
     "memberof": "src/utils.js",
@@ -1057,7 +1108,7 @@
     "ignore": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 71,
     "kind": "variable",
     "name": "GULP_NOT_DEFINED_ERROR",
     "memberof": "src/utils.js",
@@ -1078,7 +1129,7 @@
     "ignore": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 72,
     "kind": "variable",
     "name": "DIR_NOT_DEFINED_ERROR",
     "memberof": "src/utils.js",
@@ -1099,7 +1150,7 @@
     "ignore": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 73,
     "kind": "variable",
     "name": "INVALID_MODULE_ERROR",
     "memberof": "src/utils.js",
@@ -1120,7 +1171,28 @@
     "ignore": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 74,
+    "kind": "variable",
+    "name": "INVALID_FILTER_ERROR",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~INVALID_FILTER_ERROR",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 75,
     "kind": "function",
     "name": "getOptions",
     "memberof": "src/utils.js",
@@ -1133,7 +1205,7 @@
     "importPath": "gulp-tasks-registrator/src/utils.js",
     "importStyle": "{getOptions}",
     "description": "Validates and builds options.",
-    "lineNumber": 13,
+    "lineNumber": 14,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1162,7 +1234,7 @@
     }
   },
   {
-    "__docId__": 73,
+    "__docId__": 76,
     "kind": "function",
     "name": "getFactory",
     "memberof": "src/utils.js",
@@ -1175,7 +1247,7 @@
     "importPath": "gulp-tasks-registrator/src/utils.js",
     "importStyle": "{getFactory}",
     "description": "Returns task's factory function.",
-    "lineNumber": 41,
+    "lineNumber": 49,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1204,7 +1276,7 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 77,
     "kind": "function",
     "name": "getPath",
     "memberof": "src/utils.js",
@@ -1217,7 +1289,7 @@
     "importPath": "gulp-tasks-registrator/src/utils.js",
     "importStyle": "{getPath}",
     "description": "Creates task's path.",
-    "lineNumber": 63,
+    "lineNumber": 71,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1257,7 +1329,7 @@
   },
   {
     "kind": "index",
-    "content": "# gulp-tasks-registrator\n\n> Clean up your Gulpfile by splitting it into small isolated tasks\n\nGulp tasks registrator.\n\n[![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)\n[![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  \n\nRegistrator runs through a given directory and registers found ```.js``` files as gulp tasks.  \n\n## Install\n\n```sh\n\n    $ npm install --save-dev gulp-tasks-registrator\n\n```\n\n## Basic Usage\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts\n                app.js\n                vendors.js\n            styles.js\n\n````\n\nRegistrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  \n\n* env  \n* build:styles  \n* build:scripts:app  \n* build:scripts:vendors\n\n#### ./gulpfile.js\n\n```javascript\n\n    var path = require('path');\n    var $ = require('gulp-load-plugins')(\n        pattern: [\n            'gulp',\n            'gulp-*',\n            'gulp.*'\n        ]\n    );\n\n    require('gulp-tasks-registrator')({\n        gulp: $.gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [$]\n    });\n\n```\n\n#### ./tasks/env.js\nEach file should contain factory function which returns an actual task function.  \nFactory will receive any arguments that were passed into registrator.\n\n```javascript\n\n    module.exports = function factory($) {\n        return task() {\n            return $.gulp.src(...)\n        };\n    };\n\n````\n\n## Grouping tasks\nWe can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.\n\n```javascript\n\n    require('gulp-tasks-registrator')({\n        gulp: gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [gulp],\n        group: true\n    });\n\n```\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts.js\n            styles.js\n            assets.js\n\n````\n\nExcept regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).\n\nIt will be the same if we created it manually, like this:\n\n````javascript\n\n    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {\n        done();\n    });\n\n````\n\n## Tasks dependencies\nAlso, since version 0.3.0, it is possible to define dependencies for each tasks:\n\n````javascript\n\n    module.exports = function factory($) {\n        const task = task() {\n            return $.gulp.src(...)\n        };\n\n        task.dependencies = ['task1', 'task2'];\n\n        return task;\n    };\n\n````\n\n### API\n\n#### registrator(options)\n\n#### options.gulp\nType: `object`.  \nGulp instance.  \n\n#### options.dir\nType: `string`.  \nFull path to task factories directory.   \n\n### options.group\nType: `boolean`.    \nCreates gulp task based on folder name and adds nested tasks as dependencies.      \nOptional.    \n\n#### options.args\nType: `Array<any>`.  \nArguments to pass to task factories.  \nOptional.  \n\n#### options.verbose\nType: `boolean`.  \nDefines whether to push to console logs.  \nOptional.  \nDefault false.  \n\n#### options.panic\nType: `boolean`.  \nDefines whether to throw error if task registration failed.  \nOptional.  \nDefault true.\n\n### License\n\nThe MIT License (MIT)    \nCopyright (C) 2015 Tim Voronov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+    "content": "# gulp-tasks-registrator\n\n> Clean up your Gulpfile by splitting it into small isolated tasks\n\nGulp tasks registrator.\n\n[![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)\n[![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  \n\nRegistrator runs through a given directory and registers found ```.js``` files as gulp tasks.  \n\n## Install\n\n```sh\n\n    $ npm install --save-dev gulp-tasks-registrator\n\n```\n\n## Basic Usage\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts\n                app.js\n                vendors.js\n            styles.js\n\n````\n\nRegistrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  \n\n* env  \n* build:styles  \n* build:scripts:app  \n* build:scripts:vendors\n\n#### ./gulpfile.js\n\n```javascript\n\n    var path = require('path');\n    var $ = require('gulp-load-plugins')(\n        pattern: [\n            'gulp',\n            'gulp-*',\n            'gulp.*'\n        ]\n    );\n\n    require('gulp-tasks-registrator')({\n        gulp: $.gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [$]\n    });\n\n```\n\n#### ./tasks/env.js\nEach file should contain factory function which returns an actual task function.  \nFactory will receive any arguments that were passed into registrator.\n\n```javascript\n\n    module.exports = function factory($) {\n        return task() {\n            return $.gulp.src(...)\n        };\n    };\n\n````\n\n## Grouping tasks\nWe can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.\n\n```javascript\n\n    require('gulp-tasks-registrator')({\n        gulp: gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [gulp],\n        group: true\n    });\n\n```\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts.js\n            styles.js\n            assets.js\n\n````\n\nExcept regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).\n\nIt will be the same if we created it manually, like this:\n\n````javascript\n\n    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {\n        done();\n    });\n\n````\n\n## Tasks dependencies\nAlso, since version 0.3.0, it is possible to define dependencies for each tasks:\n\n````javascript\n\n    module.exports = function factory($) {\n        const task = task() {\n            return $.gulp.src(...)\n        };\n\n        task.dependencies = ['task1', 'task2'];\n\n        return task;\n    };\n\n````\n\n### API\n\n#### registrator(options)\n\n#### options.gulp\nType: `object`.  \nGulp instance.  \n\n#### options.dir\nType: `string`.  \nFull path to task factories directory.   \n\n### options.group\nType: `boolean`.    \nCreates gulp task based on folder name and adds nested tasks as dependencies.      \nOptional.    \n\n#### options.args\nType: `Array<any>`.  \nArguments to pass to task factories.  \nOptional.  \n\n#### options.filter\nType: `String|Function`.  \nRegExp string or a function for tasks filtering.  \nTask full path is passed as a function argument.   \nOptional.  \n\n#### options.verbose\nType: `boolean`.  \nDefines whether to push to console logs.  \nOptional.  \nDefault false.  \n\n#### options.panic\nType: `boolean`.  \nDefines whether to throw error if task registration failed.  \nOptional.  \nDefault true.\n\n### License\n\nThe MIT License (MIT)    \nCopyright (C) 2015 Tim Voronov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/README.md",
     "name": "./README.md",
     "static": true,
@@ -1265,7 +1337,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"gulp-tasks-registrator\",\n  \"version\": \"0.3.1\",\n  \"description\": \"Registers gulp tasks from folders\",\n  \"main\": \"lib/index.js\",\n  \"scripts\": {\n    \"clean:doc\": \"rimraf doc\",\n    \"clean:js\": \"rimraf lib\",\n    \"clean\": \"npm run clean:doc && npm run clean:js\",\n    \"lint\": \"eslint -c ./.eslintrc.json src\",\n    \"test\": \"npm run lint && mocha --reporter spec --require babel-register --recursive test\",\n    \"build:doc\": \"npm run clean:doc && esdoc -c ./esdoc.json\",\n    \"build:js\": \"npm run lint && npm run clean:js && babel src --out-dir lib\",\n    \"build\": \"npm run test && npm run build:js && npm run build:doc\",\n    \"prepublish\": \"npm run build\"\n  },\n  \"keywords\": [\n    \"gulp\",\n    \"task\",\n    \"loader\"\n  ],\n  \"author\": \"Tim Voronov <ziflex@gmail.com>\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/ziflex/gulp-tasks-registrator.git\"\n  },\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"glob\": \"^7.0.3\",\n    \"gulp-util\": \"^3.0.7\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.6.4\",\n    \"babel-eslint\": \"^5.0.0\",\n    \"babel-preset-es2015\": \"^6.6.0\",\n    \"babel-preset-stage-0\": \"^6.5.0\",\n    \"babel-register\": \"^6.5.0\",\n    \"chai\": \"^3.5.0\",\n    \"chai-spies\": \"^0.7.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^2.4.0\",\n    \"eslint-config-airbnb\": \"^6.0.2\",\n    \"eslint-plugin-mocha\": \"^2.0.0\",\n    \"estraverse-fb\": \"^1.3.1\",\n    \"mocha\": \"^5.2.0\",\n    \"rimraf\": \"^2.5.2\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"gulp-tasks-registrator\",\n  \"version\": \"0.4.0\",\n  \"description\": \"Registers gulp tasks from folders\",\n  \"main\": \"lib/index.js\",\n  \"scripts\": {\n    \"gh-pages\": \"git subtree push --prefix doc origin gh-pages\",\n    \"clean:doc\": \"rimraf doc\",\n    \"clean:js\": \"rimraf lib\",\n    \"clean\": \"npm run clean:doc && npm run clean:js\",\n    \"lint\": \"eslint -c ./.eslintrc.json src\",\n    \"test\": \"npm run lint && mocha --reporter spec --require babel-register --recursive test\",\n    \"build:doc\": \"npm run clean:doc && esdoc -c ./esdoc.json\",\n    \"build:js\": \"npm run lint && npm run clean:js && babel src --out-dir lib\",\n    \"build\": \"npm run test && npm run build:js && npm run build:doc\",\n    \"prepublish\": \"npm run build\"\n  },\n  \"keywords\": [\n    \"gulp\",\n    \"task\",\n    \"loader\"\n  ],\n  \"author\": \"Tim Voronov <ziflex@gmail.com>\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/ziflex/gulp-tasks-registrator.git\"\n  },\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"chalk\": \"^2.4.1\",\n    \"fancy-log\": \"^1.3.2\",\n    \"glob\": \"^7.1.2\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.26.0\",\n    \"babel-env\": \"^2.4.1\",\n    \"babel-eslint\": \"^8.2.3\",\n    \"babel-preset-es2015\": \"^6.6.0\",\n    \"babel-preset-stage-0\": \"^6.5.0\",\n    \"babel-register\": \"^6.26.0\",\n    \"chai\": \"^3.5.0\",\n    \"chai-spies\": \"^0.7.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.19.1\",\n    \"eslint-config-airbnb\": \"^16.1.0\",\n    \"eslint-plugin-import\": \"^2.12.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.3\",\n    \"eslint-plugin-mocha\": \"^5.0.0\",\n    \"estraverse-fb\": \"^1.3.1\",\n    \"mocha\": \"^5.2.0\",\n    \"rimraf\": \"^2.5.2\"\n  }\n}\n",
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/package.json",
     "name": "package.json",
     "static": true,
@@ -1274,7 +1346,7 @@
   {
     "kind": "manualIndex",
     "globalIndex": true,
-    "content": "# gulp-tasks-registrator\n\n> Clean up your Gulpfile by splitting it into small isolated tasks\n\nGulp tasks registrator.\n\n[![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)\n[![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  \n\nRegistrator runs through a given directory and registers found ```.js``` files as gulp tasks.  \n\n## Install\n\n```sh\n\n    $ npm install --save-dev gulp-tasks-registrator\n\n```\n\n## Basic Usage\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts\n                app.js\n                vendors.js\n            styles.js\n\n````\n\nRegistrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  \n\n* env  \n* build:styles  \n* build:scripts:app  \n* build:scripts:vendors\n\n#### ./gulpfile.js\n\n```javascript\n\n    var path = require('path');\n    var $ = require('gulp-load-plugins')(\n        pattern: [\n            'gulp',\n            'gulp-*',\n            'gulp.*'\n        ]\n    );\n\n    require('gulp-tasks-registrator')({\n        gulp: $.gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [$]\n    });\n\n```\n\n#### ./tasks/env.js\nEach file should contain factory function which returns an actual task function.  \nFactory will receive any arguments that were passed into registrator.\n\n```javascript\n\n    module.exports = function factory($) {\n        return task() {\n            return $.gulp.src(...)\n        };\n    };\n\n````\n\n## Grouping tasks\nWe can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.\n\n```javascript\n\n    require('gulp-tasks-registrator')({\n        gulp: gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [gulp],\n        group: true\n    });\n\n```\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts.js\n            styles.js\n            assets.js\n\n````\n\nExcept regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).\n\nIt will be the same if we created it manually, like this:\n\n````javascript\n\n    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {\n        done();\n    });\n\n````\n\n## Tasks dependencies\nAlso, since version 0.3.0, it is possible to define dependencies for each tasks:\n\n````javascript\n\n    module.exports = function factory($) {\n        const task = task() {\n            return $.gulp.src(...)\n        };\n\n        task.dependencies = ['task1', 'task2'];\n\n        return task;\n    };\n\n````\n\n### API\n\n#### registrator(options)\n\n#### options.gulp\nType: `object`.  \nGulp instance.  \n\n#### options.dir\nType: `string`.  \nFull path to task factories directory.   \n\n### options.group\nType: `boolean`.    \nCreates gulp task based on folder name and adds nested tasks as dependencies.      \nOptional.    \n\n#### options.args\nType: `Array<any>`.  \nArguments to pass to task factories.  \nOptional.  \n\n#### options.verbose\nType: `boolean`.  \nDefines whether to push to console logs.  \nOptional.  \nDefault false.  \n\n#### options.panic\nType: `boolean`.  \nDefines whether to throw error if task registration failed.  \nOptional.  \nDefault true.\n\n### License\n\nThe MIT License (MIT)    \nCopyright (C) 2015 Tim Voronov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+    "content": "# gulp-tasks-registrator\n\n> Clean up your Gulpfile by splitting it into small isolated tasks\n\nGulp tasks registrator.\n\n[![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)\n[![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  \n\nRegistrator runs through a given directory and registers found ```.js``` files as gulp tasks.  \n\n## Install\n\n```sh\n\n    $ npm install --save-dev gulp-tasks-registrator\n\n```\n\n## Basic Usage\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts\n                app.js\n                vendors.js\n            styles.js\n\n````\n\nRegistrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  \n\n* env  \n* build:styles  \n* build:scripts:app  \n* build:scripts:vendors\n\n#### ./gulpfile.js\n\n```javascript\n\n    var path = require('path');\n    var $ = require('gulp-load-plugins')(\n        pattern: [\n            'gulp',\n            'gulp-*',\n            'gulp.*'\n        ]\n    );\n\n    require('gulp-tasks-registrator')({\n        gulp: $.gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [$]\n    });\n\n```\n\n#### ./tasks/env.js\nEach file should contain factory function which returns an actual task function.  \nFactory will receive any arguments that were passed into registrator.\n\n```javascript\n\n    module.exports = function factory($) {\n        return task() {\n            return $.gulp.src(...)\n        };\n    };\n\n````\n\n## Grouping tasks\nWe can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.\n\n```javascript\n\n    require('gulp-tasks-registrator')({\n        gulp: gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [gulp],\n        group: true\n    });\n\n```\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts.js\n            styles.js\n            assets.js\n\n````\n\nExcept regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).\n\nIt will be the same if we created it manually, like this:\n\n````javascript\n\n    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {\n        done();\n    });\n\n````\n\n## Tasks dependencies\nAlso, since version 0.3.0, it is possible to define dependencies for each tasks:\n\n````javascript\n\n    module.exports = function factory($) {\n        const task = task() {\n            return $.gulp.src(...)\n        };\n\n        task.dependencies = ['task1', 'task2'];\n\n        return task;\n    };\n\n````\n\n### API\n\n#### registrator(options)\n\n#### options.gulp\nType: `object`.  \nGulp instance.  \n\n#### options.dir\nType: `string`.  \nFull path to task factories directory.   \n\n### options.group\nType: `boolean`.    \nCreates gulp task based on folder name and adds nested tasks as dependencies.      \nOptional.    \n\n#### options.args\nType: `Array<any>`.  \nArguments to pass to task factories.  \nOptional.  \n\n#### options.filter\nType: `String|Function`.  \nRegExp string or a function for tasks filtering.  \nTask full path is passed as a function argument.   \nOptional.  \n\n#### options.verbose\nType: `boolean`.  \nDefines whether to push to console logs.  \nOptional.  \nDefault false.  \n\n#### options.panic\nType: `boolean`.  \nDefines whether to throw error if task registration failed.  \nOptional.  \nDefault true.\n\n### License\n\nThe MIT License (MIT)    \nCopyright (C) 2015 Tim Voronov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/README.md",
     "name": "./README.md",
     "static": true,
@@ -1284,7 +1356,7 @@
     "kind": "manual",
     "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/CHANGELOG.md",
     "name": "./CHANGELOG.md",
-    "content": "## 0.3.0\n### Added\n* Now tasks can define their dependencies    \n\n```js\n\n    export default function factory() {\n        const task3 = function task3(done) {\n            done();\n        };\n\n        task3.dependencies = ['task-1', 'task-2'];\n\n        return task3;\n    }\n\n```\n\n### Fixed\n* Group task failed if first given argument is not a function\n\n## 0.2.4\n### Changed\n* Using gulp-util for logging.\n\n## 0.2.3\n\n### Fixed\n* Parsing task path on Windows\n\n## 0.2.1\n\n### Fixed\n* Group by root folder (task with empty name was registered)\n\n### Changed\n* Output colors\n\n## 0.2.0\n\n### Added\n\n* Automatically generated group task\n* Colorized console output\n\n## 0.1.1\n\n### Fixed\n\n* Fixed dependency\n\n## 0.1.0\n\n### Added\n\n* Basic tasks registration\n* Passing arguments\n* Logging\n* Throwing errors\n",
+    "content": "## 0.4.0\n### Added\n* ```params.filter``` tasks filter string expression or a function.\n```js\n    \n```\n\n## 0.3.0\n### Added\n* Now tasks can define their dependencies    \n\n```js\n\n    export default function factory() {\n        const task3 = function task3(done) {\n            done();\n        };\n\n        task3.dependencies = ['task-1', 'task-2'];\n\n        return task3;\n    }\n\n```\n\n### Fixed\n* Group task failed if first given argument is not a function\n\n## 0.2.4\n### Changed\n* Using gulp-util for logging.\n\n## 0.2.3\n\n### Fixed\n* Parsing task path on Windows\n\n## 0.2.1\n\n### Fixed\n* Group by root folder (task with empty name was registered)\n\n### Changed\n* Output colors\n\n## 0.2.0\n\n### Added\n\n* Automatically generated group task\n* Colorized console output\n\n## 0.1.1\n\n### Fixed\n\n* Fixed dependency\n\n## 0.1.0\n\n### Added\n\n* Basic tasks registration\n* Passing arguments\n* Logging\n* Throwing errors\n",
     "static": true,
     "access": "public"
   }

@@ -31,7 +31,7 @@
 <div data-ice="manual">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-3-0" data-ice="link">0.3.0</a></li>
+    <li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-4-0" data-ice="link">0.4.0</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-2-4" data-ice="link">0.2.4</a></li>
@@ -52,10 +52,17 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h2 id="0-3-0">0.3.0</h2><h3 id="added">Added</h3><ul>
-<li>Now tasks can define their dependencies    </li>
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h2 id="0-4-0">0.4.0</h2><h3 id="added">Added</h3><ul>
+<li><code>params.filter</code> tasks filter string expression or a function.
+<code>`</code>js</li>
 </ul>
-<pre><code class="lang-js"><code class="source-code prettyprint">
+<pre><code><code class="source-code prettyprint">
+## 0.3.0
+### Added
+* Now tasks can define their dependencies    
+
+```js
+
     export default function factory() {
         const task3 = function task3(done) {
             done();
@@ -66,8 +73,7 @@
         return task3;
     }
 </code>
-</code></pre>
-<h3 id="fixed">Fixed</h3><ul>
+</code></pre><h3 id="fixed">Fixed</h3><ul>
 <li>Group task failed if first given argument is not a function</li>
 </ul>
 <h2 id="0-2-4">0.2.4</h2><h3 id="changed">Changed</h3><ul>

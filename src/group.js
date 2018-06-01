@@ -56,11 +56,18 @@ class Group {
         }
 
         const tasks = this._tasks;
+        const keys = Object.keys(tasks);
+        const len = keys.length;
+        let i = 0;
 
-        for (const prop in tasks) {
+        while (i < len) {
+            const prop = keys[i];
+
             if (tasks[prop]) {
                 iteratee(tasks[prop]);
             }
+
+            i += 1;
         }
     }
 }

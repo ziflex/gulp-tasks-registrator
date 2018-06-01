@@ -153,6 +153,12 @@ Type: `Array<any>`.
 Arguments to pass to task factories.  
 Optional.  
 
+#### options.filter
+Type: `String|Function`.  
+RegExp string or a function for tasks filtering.  
+Task full path is passed as a function argument.   
+Optional.  
+
 #### options.verbose
 Type: `boolean`.  
 Defines whether to push to console logs.  

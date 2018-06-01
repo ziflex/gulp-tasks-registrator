@@ -1,9 +1,10 @@
 import path from 'path';
 
 const OPTIONS_NOT_FOUND_ERROR = 'Options are missed';
-const GULP_NOT_DEFINED_ERROR = 'Gulp is missed!';
-const DIR_NOT_DEFINED_ERROR = 'Target directory is missed!';
+const GULP_NOT_DEFINED_ERROR = 'Gulp is missed';
+const DIR_NOT_DEFINED_ERROR = 'Target directory is missed';
 const INVALID_MODULE_ERROR = 'Invalid task factory module';
+const INVALID_FILTER_ERROR = 'Invalid task filter';
 
 /**
  * Validates and builds options.
@@ -23,13 +24,20 @@ export function getOptions(params) {
         throw new Error(DIR_NOT_DEFINED_ERROR);
     }
 
+    if (params.filter != null) {
+        if (typeof params.filter !== 'string' && typeof params.filter !== 'function') {
+            throw new Error(INVALID_FILTER_ERROR);
+        }
+    }
+
     return {
         gulp: params.gulp,
         dir: params.dir,
         args: params.args || [],
         panic: !!params.panic,
         group: !!params.group,
-        verbose: !!params.verbose
+        verbose: !!params.verbose,
+        filter: params.filter
     };
 }
 

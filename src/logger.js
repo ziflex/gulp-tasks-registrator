@@ -1,4 +1,5 @@
-import gutil from 'gulp-util';
+import log from 'fancy-log';
+import chalk from 'chalk';
 
 /**
 * Represents a logger.
@@ -10,24 +11,24 @@ class Logger {
      * @returns {Object} - Logger.
      */
     constructor(verbose = true) {
-        this._verbose = verbose;
+        this.verbose = verbose;
     }
 
     error(...args) {
-        if (this._verbose) {
-            gutil.log(...args);
+        if (this.verbose) {
+            log.error(...args);
         }
     }
 
     warn(...args) {
-        if (this._verbose) {
-            gutil.log(...args);
+        if (this.verbose) {
+            log.warn(...args);
         }
     }
 
     info(...args) {
-        if (this._verbose) {
-            gutil.log(...args);
+        if (this.verbose) {
+            log.info(...args);
         }
     }
 }
@@ -37,5 +38,5 @@ export default {
         return new Logger(...args);
     },
 
-    colors: gutil.colors
+    colors: chalk
 };

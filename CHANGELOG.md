@@ -1,3 +1,10 @@
+## 0.4.0
+### Added
+* ```params.filter``` tasks filter string expression or a function.
+```js
+    
+```
+
 ## 0.3.0
 ### Added
 * Now tasks can define their dependencies    
