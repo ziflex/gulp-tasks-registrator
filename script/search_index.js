@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "gulp-tasks-registrator/src/filter.js~filter",
+    "function/index.html#static-function-filter",
+    "<span>filter</span> <span class=\"search-result-import-path\">gulp-tasks-registrator/src/filter.js</span>",
+    "function"
+  ],
+  [
     "gulp-tasks-registrator/src/utils.js~getfactory",
     "function/index.html#static-function-getFactory",
     "<span>getFactory</span> <span class=\"search-result-import-path\">gulp-tasks-registrator/src/utils.js</span>",
@@ -304,6 +310,12 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "src/.external-ecmascript.js~undefined",
     "external"
+  ],
+  [
+    "src/filter.js",
+    "file/src/filter.js.html",
+    "src/filter.js",
+    "file"
   ],
   [
     "src/group.js",

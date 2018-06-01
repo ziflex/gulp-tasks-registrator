@@ -29,7 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-filter">filter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getFactory">getFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOptions">getOptions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPath">getPath</a></span></span></li>
@@ -43,6 +44,7 @@ import path from &apos;path&apos;;
 import { getOptions, getFactory, getPath } from &apos;./utils&apos;;
 import Logger from &apos;./logger&apos;;
 import Group from &apos;./group&apos;;
+import Filter from &apos;./filter&apos;;
 
 const SUCESS_MESSAGE = &apos;Registered task:&apos;;
 const FAILURE_MESSAGE = &apos;Failed to register task:&apos;;
@@ -57,11 +59,13 @@ const FAILURE_MESSAGE = &apos;Failed to register task:&apos;;
  * @param params.verbose {Boolean} - Defines whether to push to console logs. optionsional. Default false.
  * @param params.panic {Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true.
  * @param params.group {Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies.
+ * @param params.filter {String|Function} - Defines a filter using either a regexp expression or a function. Optional.
  */
 module.exports = function registrator(params) {
     const options = getOptions(params);
     const logger = Logger.create(options.verbose);
     const group = Group(options.group);
+    const filter = Filter(options.filter);
 
     glob.sync(path.join(options.dir, &apos;/**/*.js&apos;)).forEach((file) =&gt; {
         let taskFullName = &apos;&apos;;
@@ -71,19 +75,21 @@ module.exports = function registrator(params) {
             const taskPath = getPath(options.dir, path.dirname(file));
             const factory = getFactory(require(file));
 
-            if (taskPath) {
-                taskFullName = `${taskPath}:${taskName}`;
-            } else {
-                taskFullName = taskName;
+            if (filter(file) === true) {
+                if (taskPath) {
+                    taskFullName = `${taskPath}:${taskName}`;
+                } else {
+                    taskFullName = taskName;
+                }
+
+                const task = factory(...options.args);
+
+                options.gulp.task(taskFullName, task.dependencies || [], task);
+
+                group.push(taskFullName);
+
+                logger.info(SUCESS_MESSAGE, Logger.colors.cyan(taskFullName));
             }
-
-            const task = factory(...options.args);
-
-            options.gulp.task(taskFullName, task.dependencies || [], task);
-
-            group.push(taskFullName);
-
-            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(taskFullName));
         } catch (err) {
             logger.error(FAILURE_MESSAGE, Logger.colors.cyan(taskFullName), err.toString());
 

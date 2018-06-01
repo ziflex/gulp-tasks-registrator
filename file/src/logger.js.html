@@ -29,7 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-filter">filter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getFactory">getFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOptions">getOptions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPath">getPath</a></span></span></li>
@@ -38,7 +39,8 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/logger.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import gutil from &apos;gulp-util&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import log from &apos;fancy-log&apos;;
+import chalk from &apos;chalk&apos;;
 
 /**
 * Represents a logger.
@@ -50,24 +52,24 @@ class Logger {
      * @returns {Object} - Logger.
      */
     constructor(verbose = true) {
-        this._verbose = verbose;
+        this.verbose = verbose;
     }
 
     error(...args) {
-        if (this._verbose) {
-            gutil.log(...args);
+        if (this.verbose) {
+            log.error(...args);
         }
     }
 
     warn(...args) {
-        if (this._verbose) {
-            gutil.log(...args);
+        if (this.verbose) {
+            log.warn(...args);
         }
     }
 
     info(...args) {
-        if (this._verbose) {
-            gutil.log(...args);
+        if (this.verbose) {
+            log.info(...args);
         }
     }
 }
@@ -77,7 +79,7 @@ export default {
         return new Logger(...args);
     },
 
-    colors: gutil.colors
+    colors: chalk
 };
 </code></pre>
 

@@ -29,7 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-filter">filter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getFactory">getFactory</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOptions">getOptions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPath">getPath</a></span></span></li>
@@ -41,9 +42,10 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import path from &apos;path&apos;;
 
 const OPTIONS_NOT_FOUND_ERROR = &apos;Options are missed&apos;;
-const GULP_NOT_DEFINED_ERROR = &apos;Gulp is missed!&apos;;
-const DIR_NOT_DEFINED_ERROR = &apos;Target directory is missed!&apos;;
+const GULP_NOT_DEFINED_ERROR = &apos;Gulp is missed&apos;;
+const DIR_NOT_DEFINED_ERROR = &apos;Target directory is missed&apos;;
 const INVALID_MODULE_ERROR = &apos;Invalid task factory module&apos;;
+const INVALID_FILTER_ERROR = &apos;Invalid task filter&apos;;
 
 /**
  * Validates and builds options.
@@ -63,13 +65,20 @@ export function getOptions(params) {
         throw new Error(DIR_NOT_DEFINED_ERROR);
     }
 
+    if (params.filter != null) {
+        if (typeof params.filter !== &apos;string&apos; &amp;&amp; typeof params.filter !== &apos;function&apos;) {
+            throw new Error(INVALID_FILTER_ERROR);
+        }
+    }
+
     return {
         gulp: params.gulp,
         dir: params.dir,
         args: params.args || [],
         panic: !!params.panic,
         group: !!params.group,
-        verbose: !!params.verbose
+        verbose: !!params.verbose,
+        filter: params.filter
     };
 }
 
