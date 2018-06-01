@@ -1,13 +1,29 @@
 {
   "source": "./src",
   "destination": "./doc",
-  "index": "./README.md",
-  "package": "./package.json",
-  "manual": {
-    "changelog": ["./CHANGELOG.md"]
-  },
-  "test": {
-    "type": "mocha",
-    "source": "./test/unit"
-  }
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "manual": {
+          "index": "./README.md",
+          "globalIndex": true,
+          "brand": {
+            "title": "gulp-tasks-registrator",
+            "description": "Auto task registrator",
+            "repository": "https://github.com/ziflex/gulp-tasks-registrator",
+            "site": "https://github.com/ziflex/gulp-tasks-registrator",
+            "author": "https://github.com/ziflex"
+          },
+          "files": [
+            "./CHANGELOG.md"
+          ]
+        },
+        "test": {
+          "type": "mocha",
+          "source": "./test/unit"
+        }
+      }
+    }
+  ]
 }

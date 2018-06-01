@@ -1,0 +1,1291 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/group.js",
+    "content": "/**\n * Represents a tasks group.\n */\nclass Group {\n    /**\n     * Creates a tasks group.\n     * @param {boolean} enabled - Defines whether grouping is enabled.\n     */\n    constructor(enabled) {\n        this._enabled = enabled;\n        this._tasks = Object.create(null);\n    }\n\n    push(path) {\n        if (!this._enabled) {\n            return;\n        }\n\n        if (!path) {\n            return;\n        }\n\n        const parts = path.split(':');\n\n        if (parts.length <= 0) {\n            return;\n        }\n\n        const parent = parts.slice(0, parts.length - 1).join(':');\n\n        // task in root folder, skip it\n        if (!parent) {\n            return;\n        }\n\n        this.push(parent);\n\n        let task = this._tasks[parent];\n\n        if (!task) {\n            task = {\n                name: parent,\n                dependencies: []\n            };\n            this._tasks[parent] = task;\n        }\n\n        if (task.dependencies.indexOf(path) < 0) {\n            task.dependencies.push(path);\n        }\n    }\n\n    forEach(iteratee) {\n        if (!this._enabled) {\n            return;\n        }\n\n        const tasks = this._tasks;\n\n        for (const prop in tasks) {\n            if (tasks[prop]) {\n                iteratee(tasks[prop]);\n            }\n        }\n    }\n}\n\nexport default function create(...args) {\n    return new Group(...args);\n}\n",
+    "static": true,
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/group.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "Group",
+    "memberof": "src/group.js",
+    "static": true,
+    "longname": "src/group.js~Group",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/group.js",
+    "importStyle": null,
+    "description": "Represents a tasks group.",
+    "lineNumber": 4,
+    "interface": false,
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/group.js~Group",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/group.js~Group#constructor",
+    "access": "public",
+    "description": "Creates a tasks group.",
+    "lineNumber": 9,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "enabled",
+        "description": "Defines whether grouping is enabled."
+      }
+    ]
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "_enabled",
+    "memberof": "src/group.js~Group",
+    "static": false,
+    "longname": "src/group.js~Group#_enabled",
+    "access": "private",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "_tasks",
+    "memberof": "src/group.js~Group",
+    "static": false,
+    "longname": "src/group.js~Group#_tasks",
+    "access": "private",
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "push",
+    "memberof": "src/group.js~Group",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/group.js~Group#push",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "forEach",
+    "memberof": "src/group.js~Group",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/group.js~Group#forEach",
+    "access": "public",
+    "description": null,
+    "lineNumber": 53,
+    "undocument": true,
+    "params": [
+      {
+        "name": "iteratee",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "create",
+    "memberof": "src/group.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/group.js~create",
+    "access": "public",
+    "export": true,
+    "importPath": "gulp-tasks-registrator/src/group.js",
+    "importStyle": "create",
+    "description": null,
+    "lineNumber": 68,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import glob from 'glob';\nimport path from 'path';\nimport { getOptions, getFactory, getPath } from './utils';\nimport Logger from './logger';\nimport Group from './group';\n\nconst SUCESS_MESSAGE = 'Registered task:';\nconst FAILURE_MESSAGE = 'Failed to register task:';\n\n/**\n * Iterates over target directory and registers gulp tasks by invoking task factories.\n * Task name is based on its path.\n * @param params\n * @param params.gulp {Object} - Gulp instance.\n * @param params.dir {String} - Full path to task factories directory.\n * @param params.args {Array<any>} - Arguments to pass to task factories. optionsional.\n * @param params.verbose {Boolean} - Defines whether to push to console logs. optionsional. Default false.\n * @param params.panic {Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true.\n * @param params.group {Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies.\n */\nmodule.exports = function registrator(params) {\n    const options = getOptions(params);\n    const logger = Logger.create(options.verbose);\n    const group = Group(options.group);\n\n    glob.sync(path.join(options.dir, '/**/*.js')).forEach((file) => {\n        let taskFullName = '';\n\n        try {\n            const taskName = path.basename(file, '.js');\n            const taskPath = getPath(options.dir, path.dirname(file));\n            const factory = getFactory(require(file));\n\n            if (taskPath) {\n                taskFullName = `${taskPath}:${taskName}`;\n            } else {\n                taskFullName = taskName;\n            }\n\n            const task = factory(...options.args);\n\n            options.gulp.task(taskFullName, task.dependencies || [], task);\n\n            group.push(taskFullName);\n\n            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(taskFullName));\n        } catch (err) {\n            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(taskFullName), err.toString());\n\n            if (options.panic) {\n                throw err;\n            }\n        }\n    });\n\n    group.forEach((task) => {\n        try {\n            options.gulp.task(task.name, task.dependencies);\n            logger.info(SUCESS_MESSAGE, Logger.colors.cyan(task.name));\n        } catch (err) {\n            logger.error(FAILURE_MESSAGE, Logger.colors.cyan(task.name), err.toString());\n\n            if (options.panic) {\n                throw err;\n            }\n        }\n    });\n};\n",
+    "static": true,
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 57,
+    "kind": "variable",
+    "name": "SUCESS_MESSAGE",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~SUCESS_MESSAGE",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "FAILURE_MESSAGE",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~FAILURE_MESSAGE",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "exports",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~exports",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/index.js",
+    "importStyle": null,
+    "description": "Iterates over target directory and registers gulp tasks by invoking task factories.\nTask name is based on its path.",
+    "lineNumber": 21,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.gulp",
+        "description": "{Object} - Gulp instance."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.dir",
+        "description": "{String} - Full path to task factories directory."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.args",
+        "description": "{Array<any>} - Arguments to pass to task factories. optionsional."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.verbose",
+        "description": "{Boolean} - Defines whether to push to console logs. optionsional. Default false."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.panic",
+        "description": "{Boolean} - Defines whether to throw error if task registration failed. optionsional. Default true."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.group",
+        "description": "{Boolean} - Defines whether to create gulp task based on folder name and add nested tasks as dependencies."
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "name": "src/logger.js",
+    "content": "import gutil from 'gulp-util';\n\n/**\n* Represents a logger.\n*/\nclass Logger {\n    /**\n     * Creates a logger.\n     * @param verbose {Boolean} - Define whether it should write logs to output stream.\n     * @returns {Object} - Logger.\n     */\n    constructor(verbose = true) {\n        this._verbose = verbose;\n    }\n\n    error(...args) {\n        if (this._verbose) {\n            gutil.log(...args);\n        }\n    }\n\n    warn(...args) {\n        if (this._verbose) {\n            gutil.log(...args);\n        }\n    }\n\n    info(...args) {\n        if (this._verbose) {\n            gutil.log(...args);\n        }\n    }\n}\n\nexport default {\n    create(...args) {\n        return new Logger(...args);\n    },\n\n    colors: gutil.colors\n};\n",
+    "static": true,
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/logger.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 61,
+    "kind": "class",
+    "name": "Logger",
+    "memberof": "src/logger.js",
+    "static": true,
+    "longname": "src/logger.js~Logger",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/logger.js",
+    "importStyle": null,
+    "description": "Represents a logger.",
+    "lineNumber": 6,
+    "interface": false,
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/logger.js~Logger#constructor",
+    "access": "public",
+    "description": "Creates a logger.",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} - Logger."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "verbose",
+        "description": "{Boolean} - Define whether it should write logs to output stream."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "Logger."
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "member",
+    "name": "_verbose",
+    "memberof": "src/logger.js~Logger",
+    "static": false,
+    "longname": "src/logger.js~Logger#_verbose",
+    "access": "private",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "error",
+    "memberof": "src/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/logger.js~Logger#error",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "warn",
+    "memberof": "src/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/logger.js~Logger#warn",
+    "access": "public",
+    "description": null,
+    "lineNumber": 22,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "info",
+    "memberof": "src/logger.js~Logger",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/logger.js~Logger#info",
+    "access": "public",
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [
+      {
+        "name": "args",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/utils.js",
+    "content": "import path from 'path';\n\nconst OPTIONS_NOT_FOUND_ERROR = 'Options are missed';\nconst GULP_NOT_DEFINED_ERROR = 'Gulp is missed!';\nconst DIR_NOT_DEFINED_ERROR = 'Target directory is missed!';\nconst INVALID_MODULE_ERROR = 'Invalid task factory module';\n\n/**\n * Validates and builds options.\n * @param params {Object} - Passed options.\n * @returns {Object} - Normalized options.\n */\nexport function getOptions(params) {\n    if (!params) {\n        throw new Error(OPTIONS_NOT_FOUND_ERROR);\n    }\n\n    if (!params.gulp) {\n        throw new Error(GULP_NOT_DEFINED_ERROR);\n    }\n\n    if (!params.dir) {\n        throw new Error(DIR_NOT_DEFINED_ERROR);\n    }\n\n    return {\n        gulp: params.gulp,\n        dir: params.dir,\n        args: params.args || [],\n        panic: !!params.panic,\n        group: !!params.group,\n        verbose: !!params.verbose\n    };\n}\n\n/**\n * Returns task's factory function.\n * @param module {Any} - Target module.\n * @returns {Function} - Task's factory function.\n */\nexport function getFactory(module) {\n    if (!module) {\n        throw new Error(INVALID_MODULE_ERROR);\n    }\n\n    if (typeof module === 'function') {\n        return module;\n    }\n\n    if (typeof module.default === 'function') {\n        return module.default;\n    }\n\n    throw new Error(INVALID_MODULE_ERROR);\n}\n\n/**\n * Creates task's path.\n * @param root {String} - Root directory.\n * @param current {String} - Current task's directory.\n * @returns {String} - Task's fpath.\n */\nexport function getPath(root, current) {\n    const part = path.relative(root, current);\n\n    if (part) {\n        return part.split(/\\/|\\\\/g).join(':');\n    }\n\n    return '';\n}\n",
+    "static": true,
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/src/utils.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "variable",
+    "name": "OPTIONS_NOT_FOUND_ERROR",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~OPTIONS_NOT_FOUND_ERROR",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "GULP_NOT_DEFINED_ERROR",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~GULP_NOT_DEFINED_ERROR",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "variable",
+    "name": "DIR_NOT_DEFINED_ERROR",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~DIR_NOT_DEFINED_ERROR",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "variable",
+    "name": "INVALID_MODULE_ERROR",
+    "memberof": "src/utils.js",
+    "static": true,
+    "longname": "src/utils.js~INVALID_MODULE_ERROR",
+    "access": "public",
+    "export": false,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "getOptions",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~getOptions",
+    "access": "public",
+    "export": true,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": "{getOptions}",
+    "description": "Validates and builds options.",
+    "lineNumber": 13,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} - Normalized options."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params",
+        "description": "{Object} - Passed options."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "Normalized options."
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "getFactory",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~getFactory",
+    "access": "public",
+    "export": true,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": "{getFactory}",
+    "description": "Returns task's factory function.",
+    "lineNumber": 41,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Function} - Task's factory function."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "module",
+        "description": "{Any} - Target module."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Function"
+      ],
+      "spread": false,
+      "description": "Task's factory function."
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "function",
+    "name": "getPath",
+    "memberof": "src/utils.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils.js~getPath",
+    "access": "public",
+    "export": true,
+    "importPath": "gulp-tasks-registrator/src/utils.js",
+    "importStyle": "{getPath}",
+    "description": "Creates task's path.",
+    "lineNumber": 63,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{String} - Task's fpath."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "root",
+        "description": "{String} - Root directory."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "current",
+        "description": "{String} - Current task's directory."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "Task's fpath."
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# gulp-tasks-registrator\n\n> Clean up your Gulpfile by splitting it into small isolated tasks\n\nGulp tasks registrator.\n\n[![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)\n[![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  \n\nRegistrator runs through a given directory and registers found ```.js``` files as gulp tasks.  \n\n## Install\n\n```sh\n\n    $ npm install --save-dev gulp-tasks-registrator\n\n```\n\n## Basic Usage\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts\n                app.js\n                vendors.js\n            styles.js\n\n````\n\nRegistrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  \n\n* env  \n* build:styles  \n* build:scripts:app  \n* build:scripts:vendors\n\n#### ./gulpfile.js\n\n```javascript\n\n    var path = require('path');\n    var $ = require('gulp-load-plugins')(\n        pattern: [\n            'gulp',\n            'gulp-*',\n            'gulp.*'\n        ]\n    );\n\n    require('gulp-tasks-registrator')({\n        gulp: $.gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [$]\n    });\n\n```\n\n#### ./tasks/env.js\nEach file should contain factory function which returns an actual task function.  \nFactory will receive any arguments that were passed into registrator.\n\n```javascript\n\n    module.exports = function factory($) {\n        return task() {\n            return $.gulp.src(...)\n        };\n    };\n\n````\n\n## Grouping tasks\nWe can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.\n\n```javascript\n\n    require('gulp-tasks-registrator')({\n        gulp: gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [gulp],\n        group: true\n    });\n\n```\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts.js\n            styles.js\n            assets.js\n\n````\n\nExcept regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).\n\nIt will be the same if we created it manually, like this:\n\n````javascript\n\n    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {\n        done();\n    });\n\n````\n\n## Tasks dependencies\nAlso, since version 0.3.0, it is possible to define dependencies for each tasks:\n\n````javascript\n\n    module.exports = function factory($) {\n        const task = task() {\n            return $.gulp.src(...)\n        };\n\n        task.dependencies = ['task1', 'task2'];\n\n        return task;\n    };\n\n````\n\n### API\n\n#### registrator(options)\n\n#### options.gulp\nType: `object`.  \nGulp instance.  \n\n#### options.dir\nType: `string`.  \nFull path to task factories directory.   \n\n### options.group\nType: `boolean`.    \nCreates gulp task based on folder name and adds nested tasks as dependencies.      \nOptional.    \n\n#### options.args\nType: `Array<any>`.  \nArguments to pass to task factories.  \nOptional.  \n\n#### options.verbose\nType: `boolean`.  \nDefines whether to push to console logs.  \nOptional.  \nDefault false.  \n\n#### options.panic\nType: `boolean`.  \nDefines whether to throw error if task registration failed.  \nOptional.  \nDefault true.\n\n### License\n\nThe MIT License (MIT)    \nCopyright (C) 2015 Tim Voronov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"gulp-tasks-registrator\",\n  \"version\": \"0.3.1\",\n  \"description\": \"Registers gulp tasks from folders\",\n  \"main\": \"lib/index.js\",\n  \"scripts\": {\n    \"clean:doc\": \"rimraf doc\",\n    \"clean:js\": \"rimraf lib\",\n    \"clean\": \"npm run clean:doc && npm run clean:js\",\n    \"lint\": \"eslint -c ./.eslintrc.json src\",\n    \"test\": \"npm run lint && mocha --reporter spec --require babel-register --recursive test\",\n    \"build:doc\": \"npm run clean:doc && esdoc -c ./esdoc.json\",\n    \"build:js\": \"npm run lint && npm run clean:js && babel src --out-dir lib\",\n    \"build\": \"npm run test && npm run build:js && npm run build:doc\",\n    \"prepublish\": \"npm run build\"\n  },\n  \"keywords\": [\n    \"gulp\",\n    \"task\",\n    \"loader\"\n  ],\n  \"author\": \"Tim Voronov <ziflex@gmail.com>\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/ziflex/gulp-tasks-registrator.git\"\n  },\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"glob\": \"^7.0.3\",\n    \"gulp-util\": \"^3.0.7\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.6.4\",\n    \"babel-eslint\": \"^5.0.0\",\n    \"babel-preset-es2015\": \"^6.6.0\",\n    \"babel-preset-stage-0\": \"^6.5.0\",\n    \"babel-register\": \"^6.5.0\",\n    \"chai\": \"^3.5.0\",\n    \"chai-spies\": \"^0.7.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^2.4.0\",\n    \"eslint-config-airbnb\": \"^6.0.2\",\n    \"eslint-plugin-mocha\": \"^2.0.0\",\n    \"estraverse-fb\": \"^1.3.1\",\n    \"mocha\": \"^5.2.0\",\n    \"rimraf\": \"^2.5.2\"\n  }\n}\n",
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualIndex",
+    "globalIndex": true,
+    "content": "# gulp-tasks-registrator\n\n> Clean up your Gulpfile by splitting it into small isolated tasks\n\nGulp tasks registrator.\n\n[![npm version](https://badge.fury.io/js/gulp-tasks-registrator.svg)](https://www.npmjs.com/package/gulp-tasks-registrator)\n[![Build Status](https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master)](http://travis-ci.org/ziflex/gulp-tasks-registrator)  \n\nRegistrator runs through a given directory and registers found ```.js``` files as gulp tasks.  \n\n## Install\n\n```sh\n\n    $ npm install --save-dev gulp-tasks-registrator\n\n```\n\n## Basic Usage\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts\n                app.js\n                vendors.js\n            styles.js\n\n````\n\nRegistrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  \n\n* env  \n* build:styles  \n* build:scripts:app  \n* build:scripts:vendors\n\n#### ./gulpfile.js\n\n```javascript\n\n    var path = require('path');\n    var $ = require('gulp-load-plugins')(\n        pattern: [\n            'gulp',\n            'gulp-*',\n            'gulp.*'\n        ]\n    );\n\n    require('gulp-tasks-registrator')({\n        gulp: $.gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [$]\n    });\n\n```\n\n#### ./tasks/env.js\nEach file should contain factory function which returns an actual task function.  \nFactory will receive any arguments that were passed into registrator.\n\n```javascript\n\n    module.exports = function factory($) {\n        return task() {\n            return $.gulp.src(...)\n        };\n    };\n\n````\n\n## Grouping tasks\nWe can group small tasks with, so called, high order tasks, just by setting ```group``` parameter to ```true```.\n\n```javascript\n\n    require('gulp-tasks-registrator')({\n        gulp: gulp,\n        dir: path.join(__dirname, '/tasks'),\n        args: [gulp],\n        group: true\n    });\n\n```\n\nFor example, we have this folder structure with our tasks:\n\n````sh\n\n    tasks\n        env.js\n        build\n            scripts.js\n            styles.js\n            assets.js\n\n````\n\nExcept regular tasks, we will register high order task called ```build```, which will have all nested tasks as dependencies (nested high order tasks included).\n\nIt will be the same if we created it manually, like this:\n\n````javascript\n\n    gulp.task('build', ['build:scripts', 'build:styles', 'build:assets'], function(done) {\n        done();\n    });\n\n````\n\n## Tasks dependencies\nAlso, since version 0.3.0, it is possible to define dependencies for each tasks:\n\n````javascript\n\n    module.exports = function factory($) {\n        const task = task() {\n            return $.gulp.src(...)\n        };\n\n        task.dependencies = ['task1', 'task2'];\n\n        return task;\n    };\n\n````\n\n### API\n\n#### registrator(options)\n\n#### options.gulp\nType: `object`.  \nGulp instance.  \n\n#### options.dir\nType: `string`.  \nFull path to task factories directory.   \n\n### options.group\nType: `boolean`.    \nCreates gulp task based on folder name and adds nested tasks as dependencies.      \nOptional.    \n\n#### options.args\nType: `Array<any>`.  \nArguments to pass to task factories.  \nOptional.  \n\n#### options.verbose\nType: `boolean`.  \nDefines whether to push to console logs.  \nOptional.  \nDefault false.  \n\n#### options.panic\nType: `boolean`.  \nDefines whether to throw error if task registration failed.  \nOptional.  \nDefault true.\n\n### License\n\nThe MIT License (MIT)    \nCopyright (C) 2015 Tim Voronov\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/timofei.voronov/Work/src/github.com/ziflex/gulp-tasks-registrator/CHANGELOG.md",
+    "name": "./CHANGELOG.md",
+    "content": "## 0.3.0\n### Added\n* Now tasks can define their dependencies    \n\n```js\n\n    export default function factory() {\n        const task3 = function task3(done) {\n            done();\n        };\n\n        task3.dependencies = ['task-1', 'task-2'];\n\n        return task3;\n    }\n\n```\n\n### Fixed\n* Group task failed if first given argument is not a function\n\n## 0.2.4\n### Changed\n* Using gulp-util for logging.\n\n## 0.2.3\n\n### Fixed\n* Parsing task path on Windows\n\n## 0.2.1\n\n### Fixed\n* Group by root folder (task with empty name was registered)\n\n### Changed\n* Output colors\n\n## 0.2.0\n\n### Added\n\n* Automatically generated group task\n* Colorized console output\n\n## 0.1.1\n\n### Fixed\n\n* Fixed dependency\n\n## 0.1.0\n\n### Added\n\n* Basic tasks registration\n* Passing arguments\n* Logging\n* Throwing errors\n",
+    "static": true,
+    "access": "public"
+  }
+]
