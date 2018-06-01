@@ -2,24 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">API Document</title>
+  <base data-ice="baseUrl" href="./">
+  <title data-ice="title">Manual | gulp-tasks-registrator</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-</head>
-<body class="layout-container" data-ice="rootContainer">
+<meta name="description" content="Registers gulp tasks from folders"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="gulp-tasks-registrator"><meta property="twitter:description" content="Registers gulp tasks from folders"></head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
   <a href="./">Home</a>
-  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/ziflex/gulp-tasks-registrator.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -27,33 +24,47 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/ziflex/gulp-tasks-registrator.git"><img width="20px" src="./image/github.png"></a></header>
 
-<nav class="navigation" data-ice="nav"><div>
-  <ul>
-    
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-create">create</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getFactory">getFactory</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getOptions">getOptions</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPath">getPath</a></span></span></li>
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-3-0" data-ice="link">0.3.0</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-2-4" data-ice="link">0.2.4</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-2-3" data-ice="link">0.2.3</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-2-1" data-ice="link">0.2.1</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#changed" data-ice="link">Changed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-2-0" data-ice="link">0.2.0</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-1-1" data-ice="link">0.1.1</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#fixed" data-ice="link">Fixed</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#0-1-0" data-ice="link">0.1.0</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/CHANGELOG.html"><a href="manual/CHANGELOG.html#added" data-ice="link">Added</a></li>
 </ul>
+  </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="gulp-tasks-registrator">gulp-tasks-registrator</h1>
-<blockquote>
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><h1 id="gulp-tasks-registrator">gulp-tasks-registrator</h1><blockquote>
 <p>Clean up your Gulpfile by splitting it into small isolated tasks</p>
 </blockquote>
 <p>Gulp tasks registrator.</p>
 <p><a href="https://www.npmjs.com/package/gulp-tasks-registrator"><img src="https://badge.fury.io/js/gulp-tasks-registrator.svg" alt="npm version"></a>
 <a href="http://travis-ci.org/ziflex/gulp-tasks-registrator"><img src="https://secure.travis-ci.org/ziflex/gulp-tasks-registrator.svg?branch=master" alt="Build Status"></a>  </p>
 <p>Registrator runs through a given directory and registers found <code>.js</code> files as gulp tasks.  </p>
-<h2 id="install">Install</h2>
-<pre><code class="lang-sh"><code class="source-code prettyprint">
-    $ npm install --save-dev gulp-tasks-registrator</code>
+<h2 id="install">Install</h2><pre><code class="lang-sh"><code class="source-code prettyprint">
+    $ npm install --save-dev gulp-tasks-registrator
+</code>
 </code></pre>
-<h2 id="basic-usage">Basic Usage</h2>
-<p>For example, we have this folder structure with our tasks:</p>
+<h2 id="basic-usage">Basic Usage</h2><p>For example, we have this folder structure with our tasks:</p>
 <pre><code class="lang-sh"><code class="source-code prettyprint">
     tasks
         env.js
@@ -61,7 +72,8 @@
             scripts
                 app.js
                 vendors.js
-            styles.js</code>
+            styles.js
+</code>
 </code></pre>
 <p>Registrator will create tasks using convention - {folder1}:{folderN}:{filename}, ignoring root folder:  </p>
 <ul>
@@ -70,8 +82,7 @@
 <li>build:scripts:app  </li>
 <li>build:scripts:vendors</li>
 </ul>
-<h4 id="-gulpfile-js">./gulpfile.js</h4>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">
+<h4 id="--gulpfile-js">./gulpfile.js</h4><pre><code class="lang-javascript"><code class="source-code prettyprint">
     var path = require(&apos;path&apos;);
     var $ = require(&apos;gulp-load-plugins&apos;)(
         pattern: [
@@ -85,10 +96,10 @@
         gulp: $.gulp,
         dir: path.join(__dirname, &apos;/tasks&apos;),
         args: [$]
-    });</code>
+    });
+</code>
 </code></pre>
-<h4 id="-tasks-env-js">./tasks/env.js</h4>
-<p>Each file should contain factory function which returns an actual task function.<br>Factory will receive any arguments that were passed into registrator.</p>
+<h4 id="--tasks-env-js">./tasks/env.js</h4><p>Each file should contain factory function which returns an actual task function.<br>Factory will receive any arguments that were passed into registrator.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">
     module.exports = function factory($) {
         return task() {
@@ -98,15 +109,15 @@
 
 `</code>
 </code></pre>
-<h2 id="grouping-tasks">Grouping tasks</h2>
-<p>We can group small tasks with, so called, high order tasks, just by setting <code>group</code> parameter to <code>true</code>.</p>
+<h2 id="grouping-tasks">Grouping tasks</h2><p>We can group small tasks with, so called, high order tasks, just by setting <code>group</code> parameter to <code>true</code>.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">
     require(&apos;gulp-tasks-registrator&apos;)({
         gulp: gulp,
         dir: path.join(__dirname, &apos;/tasks&apos;),
         args: [gulp],
         group: true
-    });</code>
+    });
+</code>
 </code></pre>
 <p>For example, we have this folder structure with our tasks:</p>
 <pre><code class="lang-sh"><code class="source-code prettyprint">
@@ -115,17 +126,18 @@
         build
             scripts.js
             styles.js
-            assets.js</code>
+            assets.js
+</code>
 </code></pre>
 <p>Except regular tasks, we will register high order task called <code>build</code>, which will have all nested tasks as dependencies (nested high order tasks included).</p>
 <p>It will be the same if we created it manually, like this:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">
     gulp.task(&apos;build&apos;, [&apos;build:scripts&apos;, &apos;build:styles&apos;, &apos;build:assets&apos;], function(done) {
         done();
-    });</code>
+    });
+</code>
 </code></pre>
-<h2 id="tasks-dependencies">Tasks dependencies</h2>
-<p>Also, since version 0.3.0, it is possible to define dependencies for each tasks:</p>
+<h2 id="tasks-dependencies">Tasks dependencies</h2><p>Also, since version 0.3.0, it is possible to define dependencies for each tasks:</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">
     module.exports = function factory($) {
         const task = task() {
@@ -135,24 +147,16 @@
         task.dependencies = [&apos;task1&apos;, &apos;task2&apos;];
 
         return task;
-    };</code>
+    };
+</code>
 </code></pre>
-<h3 id="api">API</h3>
-<h4 id="registrator-options-">registrator(options)</h4>
-<h4 id="options-gulp">options.gulp</h4>
-<p>Type: <code>object</code>.<br>Gulp instance.  </p>
-<h4 id="options-dir">options.dir</h4>
-<p>Type: <code>string</code>.<br>Full path to task factories directory.   </p>
-<h3 id="options-group">options.group</h3>
-<p>Type: <code>boolean</code>.<br>Creates gulp task based on folder name and adds nested tasks as dependencies.<br>Optional.    </p>
-<h4 id="options-args">options.args</h4>
-<p>Type: <code>Array&lt;any&gt;</code>.<br>Arguments to pass to task factories.<br>Optional.  </p>
-<h4 id="options-verbose">options.verbose</h4>
-<p>Type: <code>boolean</code>.<br>Defines whether to push to console logs.<br>Optional.<br>Default false.  </p>
-<h4 id="options-panic">options.panic</h4>
-<p>Type: <code>boolean</code>.<br>Defines whether to throw error if task registration failed.<br>Optional.<br>Default true.</p>
-<h3 id="license">License</h3>
-<p>The MIT License (MIT)<br>Copyright (C) 2015 Tim Voronov</p>
+<h3 id="api">API</h3><h4 id="registrator-options-">registrator(options)</h4><h4 id="options-gulp">options.gulp</h4><p>Type: <code>object</code>.<br>Gulp instance.  </p>
+<h4 id="options-dir">options.dir</h4><p>Type: <code>string</code>.<br>Full path to task factories directory.   </p>
+<h3 id="options-group">options.group</h3><p>Type: <code>boolean</code>.<br>Creates gulp task based on folder name and adds nested tasks as dependencies.<br>Optional.    </p>
+<h4 id="options-args">options.args</h4><p>Type: <code>Array&lt;any&gt;</code>.<br>Arguments to pass to task factories.<br>Optional.  </p>
+<h4 id="options-verbose">options.verbose</h4><p>Type: <code>boolean</code>.<br>Defines whether to push to console logs.<br>Optional.<br>Default false.  </p>
+<h4 id="options-panic">options.panic</h4><p>Type: <code>boolean</code>.<br>Defines whether to throw error if task registration failed.<br>Optional.<br>Default true.</p>
+<h3 id="license">License</h3><p>The MIT License (MIT)<br>Copyright (C) 2015 Tim Voronov</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &quot;Software&quot;), to deal
 in the Software without restriction, including without limitation the rights
@@ -169,10 +173,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</p>
 </div>
+
+  
+
+  <div class="manual-cards">
+    
+  </div>
+</div>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
