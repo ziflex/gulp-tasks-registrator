@@ -4,6 +4,7 @@
   "description": "Registers gulp tasks from folders",
   "main": "lib/index.js",
   "scripts": {
+    "gh-pages": "git subtree push --prefix doc origin gh-pages",
     "clean:doc": "rimraf doc",
     "clean:js": "rimraf lib",
     "clean": "npm run clean:doc && npm run clean:js",
